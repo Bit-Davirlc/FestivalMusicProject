@@ -1,13 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Biografia | NEWS LETTER</title>
+
+</body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter</title>
+    
 </head>
 <body>
 
-    <h1>Eu sou incrivel!!</h1>
-    
+    <div class="newsletter-container">
+        <i>
+        <h1 class="newsletter-title">FESTIVAL MUSIC <span>PROJECT</span></h1>
+        </i>
+        <p class="newsletter-subtitle">Receba conteúdos exclusivos, dicas semanais e novidades direto.</p>
+
+        <form class="newsletter-form" action="#" method="POST" onsubmit="enviarNewsletter(event)">
+            
+            <input 
+                type="email" 
+                class="email-input" 
+                placeholder="Digite seu melhor e-mail..." 
+                required
+            >
+            
+            <button type="submit" class="submit-btn">Acesse Aqui</button>
+        
+        </form>
+
+        <p class="footer-text">Prometemos não enviar spam. Cancele a inscrição a qualquer momento.</p>
+    </div>
+
+    <script>
+        function enviarNewsletter(event) {
+            event.preventDefault(); // Impede a página de recarregar
+            const email = event.target.querySelector('.email-input').value;
+            
+        }
+    </script>
+
+</body>
+<i>
+ <h2 class="newsletter-title">FESTIVAL MUSIC <span> RESUMO </span></h2>
+</i>
+</body>
+<strong>
+Um Festival ecletico abrangendo o publico geral o "Festival Music Project " 
+traz varias atrações nacionais e internacionais para o espaço unimed onde
+o publico pode contar com a maxima segurança e conforto e também aproveitar 
+os shows de artistas como roberto carlos, eminem, turma do pagode, linkin park
+entre varios outros grandes nomes da musica estaram presentes levando
+o publico a loucura.
+ </strong>
+</html>
+</body>
+
+<b>
+ <h2 class="newsletter-title">Contatos e Duvidas <span>  </span></h2>
+</b>
+
 </body>
 </html>
