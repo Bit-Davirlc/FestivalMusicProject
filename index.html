@@ -1,156 +1,232 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONTATOS E ASSINATURA </title>
-</head><head>
-<body>
-
-    <h1> 
-      <strong>CONTATOS</strong>  
-    <div style="text-align: center; line-height: 1.8; padding: 10px;">
-    <h1 style="margin-bottom: 15px;">CONTATOS</h1>
-    <p><a href="#">Sobre nós</a> <br>
-    <a href="#">Trabalhe conosco</a> <br>
-    <a href="#">Ouvidoria</a> <br>
-    <a href="#">Atendimento online</a> <br>
-    <a href="#">Sugestões para melhorias</a> <br>
-    <a href="#">Reclamações</a>.</p> <br>
-</div>
-   
-    </h1>
-
-<head>
-
-</html> 
-</body>
-
-<h2> 
-      <strong>Assinaturas</strong>  
-    <div style="text-align: center; line-height: 1.8; padding: 10px;">
-    <h1 style="margin-bottom: 15px;">ASSINATURAS</h1>
-    <p><a href="#">signature: Davi robson latini de carvalho</a> <br>
-    <a href="#">signature: Álex de melo</a> <br>
-    <a href="#">signature: paloma maria da silva</a> <br>
-    <a href="#">signature: alexandriny miguel</a> <br>
-    <a href="#"></a> <br>
-    <a href="#"></a>.</p> <br>
-</div>
-   
-    </h2>;
 <!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SHOWS EM DESTAQUE</title>
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<section class="bandas-mes">
-<h2>SHOWS EM DESTAQUE</h2>
-
-<div class="carousel-container">
-<button class="btn" id="prev">&#10094;</button>
-
-<div class="carousel">
-<div class="slide active">
-<a href="compra.html?banda=maroon">
-<img src="img/maroon.jpg" alt="Banda 1">
-</a>
-</div>
-
-<div class="slide">
-<a href="compra.html?banda=bts">
-<img src="img/bts.jpg" alt="Banda 2">
-</a>
-</div>
-
-<div class="slide">
-<a href="compra.html?banda=harrys">
-<img src="img/harry.jpg" alt="Banda 3">
-</a>
-</div>
-
-<div class="slide">
-<a href="compra.html?banda=iron">
-<img src="img/iron.jpg" alt="Banda 4">
-</a>
-</div>
-</div>
-
-<button class="btn" id="next">&#10095;</button>
-</div>
-</section>
-
-<script src="script.js"></script>
-
-</body>
-</html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Festival Music Project</title>
     <link
       rel="shortcut icon"
       href="https://cdn-icons-png.flaticon.com/512/228/228770.png"
       type="image/x-icon"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
   </head>
+
   <body>
     <header id="header">
-      <!-- Menu Desktop -->
       <nav class="menu-desktop">
         <ul class="menu menu-principal">
           <li class="menu-item">
-            <a href="#home" class="menu-link active">
-              <span class="menu-text">HOME</span>
-            </a>
+            <a href="#header" class="menu-link active">HOME</a>
           </li>
           <li class="menu-item">
-            <a href="#projetos" class="menu-link">
-              <span class="menu-text">SHOWS EM DESTAQUE</span>
-            </a>
+            <a href="#shows" class="menu-link">SHOWS EM DESTAQUE</a>
           </li>
           <li class="menu-item">
-            <a href="#sobre" class="menu-link">
-              <span class="menu-text">QUEM SOMOS NÓS?</span>
-            </a>
+            <a href="#sobre" class="menu-link">QUEM SOMOS NÓS?</a>
+          </li>
+          <li class="menu-item">
+            <a href="#outros-shows" class="menu-link">OUTROS SHOWS</a>
+          </li>
+          <li class="menu-item">
+            <a href="#footer" class="menu-link">CONTATOS</a>
           </li>
         </ul>
-        <form class="search-box">
+
+        <form class="search-box" role="search">
           <input
             type="text"
             placeholder="Pesquisar shows..."
             class="search-input"
+            aria-label="Pesquisar shows"
           />
-          <button type="submit" class="search-btn">🔍</button>
+          <button type="submit" class="search-btn" aria-label="Buscar">
+            🔍
+          </button>
         </form>
       </nav>
     </header>
 
-    <section class="reviews">
-      <h3>O QUE NOSSOS USUÁRIOS DIZEM</h3>
+    <section id="shows" class="bandas-mes">
+      <h2>SHOWS EM DESTAQUE</h2>
 
-      <div class="review">
-        <h3>João Silva ⭐⭐⭐⭐⭐</h3>
-        <p>
-          O site é muito fácil de usar e encontro shows rapidamente. O design é
-          bonito e as informações são bem organizadas.
-        </p>
+      <div class="ticket-container">
+        <div class="ticket-body">
+          <div class="ticket-border-inner">
+            <span class="ticket-badge top">★ LIVE MUSIC EXPERT ★</span>
+
+            <div class="carousel-slide">
+              <div class="item active">
+                <h2>NEON PULSE FEST</h2>
+                <p>Travis Scott • The Weeknd • Olivia Rodrigo</p>
+              </div>
+              <div class="item">
+                <h2>CYBERBEAT STAGE</h2>
+                <p>Alok • Peggy Gou • Rufus Du Sol</p>
+              </div>
+              <div class="item">
+                <h2>CHILL & VIBES 2026</h2>
+                <p>Post Malone • Billie Eilish • Lana Del Rey</p>
+              </div>
+            </div>
+
+            <button
+              class="btn-ticket prev"
+              id="prevBtn"
+              aria-label="Slide anterior"
+            >
+              &#10094;
+            </button>
+            <button
+              class="btn-ticket next"
+              id="nextBtn"
+              aria-label="Próximo slide"
+            >
+              &#10095;
+            </button>
+
+            <span class="ticket-badge bottom">★ DIGITAL PASS ★</span>
+          </div>
+        </div>
+
+        <div class="ticket-perforation"></div>
+
+        <div class="ticket-stub">
+          <div class="stub-content">
+            <div class="stub-call-to-action">COMPRAR INGRESSO</div>
+            <div class="barcode">
+              <div class="barcode-lines"></div>
+              <span class="barcode-number">#FEST2026</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="review">
-        <h3>Maria Oliveira ⭐⭐⭐⭐⭐</h3>
-        <p>
-          Uma plataforma moderna para descobrir eventos e acompanhar os melhores
-          shows.
-        </p>
+      <div class="carousel-indicators">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
       </div>
     </section>
+
+    <section id="sobre" class="sobre-nos">
+      <h2>QUEM SOMOS NÓS?</h2>
+      <p>
+        O <strong>Festival Music Project</strong> nasceu em 2026 com o objetivo
+        de conectar fãs aos seus artistas favoritos. Somos a maior plataforma de
+        listagem e venda de ingressos para festivais de música do país,
+        garantindo segurança, rapidez e a melhor experiência para você curtir o
+        seu show.
+      </p>
+    </section>
+
+    <section class="reviews">
+      <h2>O QUE NOSSOS USUÁRIOS DIZEM</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <h3>João Silva <span class="stars">⭐⭐⭐⭐⭐</span></h3>
+          <p>
+            "O site é muito fácil de usar e encontro shows rapidamente. O design
+            é bonito e organizado."
+          </p>
+        </div>
+        <div class="review-card">
+          <h3>Maria Oliveira <span class="stars">⭐⭐⭐⭐⭐</span></h3>
+          <p>
+            "Uma plataforma moderna para descobrir eventos e acompanhar os
+            melhores shows."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="outros-shows" class="outros-shows-section">
+      <h2>OUTROS SHOWS</h2>
+      <div class="multi-carousel-container">
+        <button
+          class="btn-multi prev"
+          id="multiPrev"
+          aria-label="Slide anterior"
+        >
+          &#10094;
+        </button>
+
+        <div class="multi-carousel">
+          <div class="multi-slide active">
+            <div class="show-card">
+              <div class="show-img-placeholder">🎸</div>
+              <h3>Coldplay Live</h3>
+              <p>Estádio MorumBIS</p>
+              <span class="show-date">24 Out 2026</span>
+            </div>
+            <div class="show-card">
+              <div class="show-img-placeholder">🎧</div>
+              <h3>Tomorrowland Brasil</h3>
+              <p>Parque Maeda</p>
+              <span class="show-date">12 Nov 2026</span>
+            </div>
+            <div class="show-card">
+              <div class="show-img-placeholder">🎤</div>
+              <h3>Bruno Mars Tour</h3>
+              <p>Allianz Parque</p>
+              <span class="show-date">05 Dez 2026</span>
+            </div>
+          </div>
+
+          <div class="multi-slide">
+            <div class="show-card">
+              <div class="show-img-placeholder">🎷</div>
+              <h3>Jazz & Blues Fest</h3>
+              <p>Teatro Municipal</p>
+              <span class="show-date">18 Jan 2027</span>
+            </div>
+            <div class="show-card">
+              <div class="show-img-placeholder">⚡</div>
+              <h3>Rock in Rio 2026</h3>
+              <p>Cidade do Rock</p>
+              <span class="show-date">15 Set 2026</span>
+            </div>
+            <div class="show-card">
+              <div class="show-img-placeholder">✨</div>
+              <h3>Lollapalooza 2027</h3>
+              <p>Autódromo de Interlagos</p>
+              <span class="show-date">26 Mar 2027</span>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="btn-multi next"
+          id="multiNext"
+          aria-label="Próximo slide"
+        >
+          &#10095;
+        </button>
+      </div>
+    </section>
+
+    <footer id="footer" class="footer">
+      <div class="footer-col">
+        <h2>CONTATOS</h2>
+        <a href="#sobre">Sobre nós</a>
+        <a href="#footer">Trabalhe conosco</a>
+        <a href="#footer">Ouvidoria</a>
+        <a href="#footer">Atendimento online</a>
+      </div>
+
+      <div class="footer-col">
+        <h2>ASSINATURAS</h2>
+        <p>Davi Robson Latini de Carvalho</p>
+        <p>Álex de Melo</p>
+        <p>Paloma Maria da Silva</p>
+        <p>Alexandriny Miguel</p>
+      </div>
+
+      <div class="footer-copy">
+        &copy; 2026 Festival Music Project - Todos os direitos reservados.
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>

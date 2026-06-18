@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styledavi.css" />
+    <title>Ticket Carousel</title>
+  </head>
+  <body>
+    <div class="ticket-container">
+      <div class="ticket-body">
+        <div class="ticket-border-inner">
+          <span class="ticket-badge top">* ADMIT ONE *</span>
+
+          <div class="carousel-slide">
+            <div class="item active">
+              <h2>SHOW ANOS 80</h2>
+              <p>Viva a melhor nostalgia musical</p>
+            </div>
+            <div class="item">
+              <h2>STAND-UP</h2>
+              <p>Uma noite para morrer de rir</p>
+            </div>
+            <div class="item">
+              <h2>FESTIVAL 2026</h2>
+              <p>O maior evento do ano bem perto de você</p>
+            </div>
+          </div>
+
+          <button class="btn prev" id="prevBtn">&#10094;</button>
+          <button class="btn next" id="nextBtn">&#10095;</button>
+
+          <span class="ticket-badge bottom">* ADMIT ONE *</span>
+        </div>
+      </div>
+
+      <div class="ticket-perforation"></div>
+
+      <div class="ticket-stub">
+        <div class="stub-content">
+          <div class="stub-call-to-action">GARANTA O SEU</div>
+          <div class="barcode">
+            <div class="barcode-lines"></div>
+            <span class="barcode-number">0123456789</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-indicators">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+    </div>
+
+    <script src="scriptdavi.js"></script>
+  </body>
+</html>
