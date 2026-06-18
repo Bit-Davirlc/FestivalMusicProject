@@ -1,0 +1,141 @@
+.ticket-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* esconde radios */
+.ticket-carousel input {
+  display: none;
+}
+
+/* TICKET base */
+.ticket {
+  width: 700px;
+  height: 300px;
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
+
+/* LADO ESQUERDO */
+.ticket-left {
+  width: 25%;
+  background: #f45b9a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical-text {
+  writing-mode: vertical-lr; /* Alinha o texto verticalmente de forma nativa */
+  transform: rotate(180deg); /* Gira para ler de baixo para cima */
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+
+/* LADO DIREITO */
+.ticket-right {
+  width: 75%;
+  background: #ff77b7;
+  position: relative;
+  overflow: hidden;
+}
+
+/* slides */
+.slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: 0.5s ease-in-out;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  color: white;
+  font-weight: bold;
+}
+
+/* cores */
+.s1 {
+  background: #ff6b6b;
+}
+.s2 {
+  background: #4dabf7;
+}
+.s3 {
+  background: #51cf66;
+}
+
+/* movimento do carrossel */
+#t1:checked ~ .ticket .slides {
+  transform: translateX(0%);
+}
+#t2:checked ~ .ticket .slides {
+  transform: translateX(-100%);
+}
+#t3:checked ~ .ticket .slides {
+  transform: translateX(-200%);
+}
+
+/* controle de exibição das setas */
+.nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: none; /* Esconde todas por padrão */
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px; /* Afasta as setas das bordas do ticket */
+  box-sizing: border-box; /* Garante que o padding não quebre a largura de 100% */
+}
+
+/* Mostra apenas as setas do slide que estiver ativo */
+#t1:checked ~ .ticket .nav1 {
+  display: flex;
+}
+#t2:checked ~ .ticket .nav2 {
+  display: flex;
+}
+#t3:checked ~ .ticket .nav3 {
+  display: flex;
+}
+
+/* estilo visual dos botões (labels) */
+.nav label {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-size: 24px;
+  font-weight: bold;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+}
+
+/* Efeito ao passar o rato e clicar */
+.nav label:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.nav label:active {
+  transform: scale(0.9); /* Pequeno efeito de clique */
+}
