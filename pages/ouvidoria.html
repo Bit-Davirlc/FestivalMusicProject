@@ -35,13 +35,12 @@
           Todas as mensagens são analisadas com cuidado para melhorarmos sempre.
         </p>
 
-        <!-- Formulário de ouvidoria -->
+       
         <form class="form-contato" onsubmit="enviarOuvidoria(event)">
 
           <input type="text" placeholder="Seu nome completo" required />
           <input type="email" placeholder="Seu e-mail" required />
 
-          <!-- Menu para escolher o tipo de mensagem -->
           <select required>
             <option value="" disabled selected>Tipo de mensagem</option>
             <option value="reclamacao">Reclamação</option>
@@ -66,11 +65,10 @@
     </footer>
 
     <script>
-      // Função simples para dar um feedback ao usuário após enviar
       function enviarOuvidoria(event) {
-        event.preventDefault(); // evita a página recarregar
+        event.preventDefault();
         alert("Mensagem enviada com sucesso! Retornaremos em até 3 dias úteis. 🎵");
-        event.target.reset(); // limpa o formulário
+        event.target.reset(); 
       }
     </script>
 

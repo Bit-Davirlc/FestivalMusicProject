@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/228/228770.png" type="image/x-icon" />
     <link rel="stylesheet" href="../style.css" />
 
-    <!-- CSS extra só para o chat desta página -->
+    
     <style>
       /* Área do chat */
       .chat-box {
@@ -23,7 +23,7 @@
         margin-bottom: 15px;
       }
 
-      /* Bolha de mensagem do atendente */
+     
       .msg-atendente {
         align-self: flex-start;
         background: #232330;
@@ -86,7 +86,7 @@
         opacity: 0.85;
       }
 
-      /* Horário de funcionamento */
+     
       .horarios {
         background: #1c1c24;
         border-radius: 10px;
@@ -169,8 +169,7 @@
     </footer>
 
     <script>
-      // Lista de respostas automáticas do "atendente"
-      // Em um projeto real, isso seria ligado a um servidor de verdade
+     
       var respostas = [
         "Entendo! Vou verificar isso para você agora. 🎵",
         "Claro! Para ingressos, você pode comprá-los diretamente na página do show.",
@@ -181,7 +180,7 @@
         "Posso te ajudar com mais alguma coisa? 😊"
       ];
 
-      // Conta quantas respostas já foram usadas
+      
       var respostaAtual = 0;
 
       function enviarMensagem() {
@@ -189,27 +188,25 @@
         var chatBox = document.getElementById("chatBox");
         var texto = input.value.trim(); // .trim() remove espaços desnecessários
 
-        // Se o campo estiver vazio, não faz nada
+        
         if (texto === "") return;
 
-        // Cria a bolha da mensagem do usuário
         var msgUsuario = document.createElement("div");
         msgUsuario.classList.add("msg-usuario");
         msgUsuario.textContent = texto;
         chatBox.appendChild(msgUsuario);
 
-        // Limpa o campo de texto
+       
         input.value = "";
 
-        // Rola o chat para baixo automaticamente
+        
         chatBox.scrollTop = chatBox.scrollHeight;
 
-        // Simula o atendente digitando (espera 1 segundo antes de responder)
         setTimeout(function() {
           var msgAtendente = document.createElement("div");
           msgAtendente.classList.add("msg-atendente");
 
-          // Pega a próxima resposta da lista
+          
           msgAtendente.textContent = respostas[respostaAtual % respostas.length];
           respostaAtual++;
 
