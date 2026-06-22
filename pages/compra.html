@@ -4,38 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Comprar Ingresso | Festival Music Project</title>
-    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/228/228770.png" type="image/x-icon" />
-    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/228/228770.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../style/style.css" />
   </head>
   <body>
-
-    <header id="header">
+    <header id="header" class="header-container">
       <nav class="menu-desktop">
         <ul class="menu menu-principal">
-          <li class="menu-item"><a href="../index.html" class="menu-link">HOME</a></li>
-          <li class="menu-item"><a href="../index.html#shows" class="menu-link">SHOWS EM DESTAQUE</a></li>
-          <li class="menu-item"><a href="../index.html#sobre" class="menu-link">QUEM SOMOS NÓS?</a></li>
-          <li class="menu-item"><a href="../index.html#outros-shows" class="menu-link">OUTROS SHOWS</a></li>
-          <li class="menu-item"><a href="../index.html#footer" class="menu-link">CONTATOS</a></li>
+          <li class="menu-item">
+            <a href="../index.html" class="menu-link">HOME</a>
+          </li>
+          <li class="menu-item">
+            <a href="../index.html#shows" class="menu-link"
+              >SHOWS EM DESTAQUE</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="../index.html#sobre" class="menu-link">QUEM SOMOS NÓS?</a>
+          </li>
+          <li class="menu-item">
+            <a href="../index.html#outros-shows" class="menu-link"
+              >OUTROS SHOWS</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="../index.html#footer" class="menu-link">CONTATOS</a>
+          </li>
         </ul>
       </nav>
     </header>
 
-    <main style="padding: 40px 20px;">
+    <main class="main-content">
       <div class="pagina-interna">
-        <h1>🎟️ Comprar Ingresso</h1>
+        <h1 class="titulo-pagina">🎟️ Comprar Ingresso</h1>
 
-        <p>Preencha os dados abaixo para garantir o seu lugar no show!</p>
+        <p class="texto-introducao">
+          Preencha os dados abaixo para garantir o seu lugar no show!
+        </p>
 
-        
-        <form class="form-contato" onsubmit="finalizarCompra(event)">
+        <form class="form-compra" onsubmit="finalizarCompra(event)">
+          <input
+            type="text"
+            class="form-compra__input"
+            placeholder="Nome completo"
+            required
+          />
+          <input
+            type="email"
+            class="form-compra__input"
+            placeholder="E-mail (para receber o ingresso)"
+            required
+          />
+          <input type="tel" class="form-compra__input" placeholder="Telefone" />
 
-          <input type="text"  placeholder="Nome completo" required />
-          <input type="email" placeholder="E-mail (para receber o ingresso)" required />
-          <input type="tel"   placeholder="Telefone" />
-
-      
-          <select required>
+          <select class="form-compra__select" required>
             <option value="" disabled selected>Escolha o show</option>
             <option>Maroon 5 — 14 Ago 2026</option>
             <option>BTS — 22 Set 2026</option>
@@ -45,8 +71,7 @@
             <option>Harry Styles — 12 Dez 2026</option>
           </select>
 
-         
-          <select required>
+          <select class="form-compra__select" required>
             <option value="" disabled selected>Tipo de ingresso</option>
             <option>Pista — R$ 180,00</option>
             <option>Pista Premium — R$ 280,00</option>
@@ -54,17 +79,28 @@
             <option>VIP — R$ 550,00</option>
           </select>
 
-          <input type="number" placeholder="Quantidade de ingressos" min="1" max="10" required />
+          <input
+            type="number"
+            class="form-compra__input"
+            placeholder="Quantidade de ingressos"
+            min="1"
+            max="10"
+            required
+          />
 
-          <button type="submit">Finalizar Compra 🎵</button>
+          <button type="submit" class="form-compra__btn">
+            Finalizar Compra 🎵
+          </button>
         </form>
 
-        
-        <p style="margin-top: 20px; font-size: 0.85rem; color: #666;">
-          🔒 Pagamento 100% seguro. Você receberá o ingresso por e-mail em até 10 minutos após a confirmação.
+        <p class="texto-seguranca">
+          🔒 Pagamento 100% seguro. Você receberá o ingresso por e-mail em até
+          10 minutos após a confirmação.
         </p>
 
-        <a href="../index.html" class="btn-voltar">← Voltar para o início</a>
+        <div class="acoes-container">
+          <a href="../index.html" class="btn-voltar">← Voltar para o início</a>
+        </div>
       </div>
     </main>
 
@@ -77,10 +113,11 @@
     <script>
       function finalizarCompra(event) {
         event.preventDefault();
-        alert("🎉 Compra realizada com sucesso! Verifique seu e-mail para receber o ingresso.");
+        alert(
+          "🎉 Compra realizada com sucesso! Verifique seu e-mail para receber o ingresso.",
+        );
         event.target.reset();
       }
     </script>
-
   </body>
 </html>

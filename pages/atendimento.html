@@ -3,162 +3,127 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atendimento Online | Festival Music Project</title>
-    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/228/228770.png" type="image/x-icon" />
-    <link rel="stylesheet" href="../style.css" />
-
-    
-    <style>
-      /* Área do chat */
-      .chat-box {
-        background: #1c1c24;
-        border: 1px solid #333;
-        border-radius: 12px;
-        height: 350px;
-        overflow-y: auto;  /* barra de rolagem quando encher */
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin-bottom: 15px;
-      }
-
-     
-      .msg-atendente {
-        align-self: flex-start;
-        background: #232330;
-        border: 1px solid #333;
-        border-radius: 0 12px 12px 12px;
-        padding: 12px 16px;
-        max-width: 75%;
-        color: #ccc;
-        font-size: 0.95rem;
-        line-height: 1.5;
-      }
-
-      /* Bolha de mensagem do usuário */
-      .msg-usuario {
-        align-self: flex-end;
-        background: #00f5d4;
-        border-radius: 12px 0 12px 12px;
-        padding: 12px 16px;
-        max-width: 75%;
-        color: #000;
-        font-size: 0.95rem;
-        font-weight: 500;
-        line-height: 1.5;
-      }
-
-      /* Área de digitar mensagem */
-      .chat-input-area {
-        display: flex;
-        gap: 10px;
-      }
-
-      .chat-input-area input {
-        flex: 1;
-        background: #1c1c24;
-        border: 1px solid #333;
-        border-radius: 8px;
-        padding: 12px 16px;
-        color: #fff;
-        font-size: 1rem;
-        outline: none;
-        transition: border-color 0.3s;
-      }
-
-      .chat-input-area input:focus {
-        border-color: #00f5d4;
-      }
-
-      .chat-input-area button {
-        padding: 12px 20px;
-        background: #00f5d4;
-        color: #000;
-        border: none;
-        border-radius: 8px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: opacity 0.3s;
-      }
-
-      .chat-input-area button:hover {
-        opacity: 0.85;
-      }
-
-     
-      .horarios {
-        background: #1c1c24;
-        border-radius: 10px;
-        padding: 20px;
-        margin-top: 25px;
-        border-left: 3px solid #ffbe0b;
-      }
-
-      .horarios h3 {
-        color: #ffbe0b;
-        margin-bottom: 10px;
-      }
-
-      .horarios p {
-        color: #aaa;
-        font-size: 0.95rem;
-        margin-bottom: 6px;
-      }
-    </style>
+    <title>Central de Atendimento | Festival Music Project</title>
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/228/228770.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../style/style.css" />
   </head>
   <body>
-
-    <header id="header">
+    <header id="header" class="header-container">
       <nav class="menu-desktop">
         <ul class="menu menu-principal">
-          <li class="menu-item"><a href="../index.html" class="menu-link">HOME</a></li>
-          <li class="menu-item"><a href="../index.html#shows" class="menu-link">SHOWS EM DESTAQUE</a></li>
-          <li class="menu-item"><a href="../index.html#sobre" class="menu-link">QUEM SOMOS NÓS?</a></li>
-          <li class="menu-item"><a href="../index.html#outros-shows" class="menu-link">OUTROS SHOWS</a></li>
-          <li class="menu-item"><a href="../index.html#footer" class="menu-link active">CONTATOS</a></li>
+          <li class="menu-item">
+            <a href="../index.html" class="menu-link">HOME</a>
+          </li>
+          <li class="menu-item">
+            <a href="../index.html#shows" class="menu-link"
+              >SHOWS EM DESTAQUE</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="../index.html#sobre" class="menu-link">QUEM SOMOS NÓS?</a>
+          </li>
+          <li class="menu-item">
+            <a href="../index.html#outros-shows" class="menu-link"
+              >OUTROS SHOWS</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="../index.html#footer" class="menu-link active">CONTATOS</a>
+          </li>
         </ul>
       </nav>
     </header>
 
-    <main style="padding: 40px 20px;">
+    <main class="main-content">
       <div class="pagina-interna">
-        <h1>💬 Atendimento Online</h1>
-
-        <p>
-          Fale com a nossa equipe em tempo real. Estamos aqui para te ajudar
-          com dúvidas sobre ingressos, eventos, pagamentos e muito mais.
+        <h1 class="titulo-pagina">⚙️ Central de Atendimento</h1>
+        <p class="texto-introducao">
+          Precisa de ajuda? Encontre respostas rápidas abaixo ou abra um chamado
+          direto com o nosso suporte técnico.
         </p>
 
-        <!-- Janela do chat simulado -->
-        <div class="chat-box" id="chatBox">
-          <!-- Primeira mensagem do atendente que aparece automaticamente -->
-          <div class="msg-atendente">
-            👋 Olá! Bem-vindo ao atendimento do <strong>Festival Music Project</strong>.
-            Como posso te ajudar hoje?
+        <h2 class="subtitulo-atendimento">💡 Respostas Rápidas</h2>
+        <div class="faq-grid">
+          <div class="faq-card">
+            <h3>🎫 Como recebo meu ingresso?</h3>
+            <p>
+              O ingresso é enviado em formato PDF para o seu e-mail cadastrado
+              logo após a confirmação do pagamento.
+            </p>
+          </div>
+          <div class="faq-card">
+            <h3>💳 Quais as formas de pagamento?</h3>
+            <p>
+              Aceitamos Pix, cartões de crédito (com parcelamento) e cartão de
+              débito.
+            </p>
+          </div>
+          <div class="faq-card">
+            <h3>❌ Posso cancelar um ingresso?</h3>
+            <p>
+              Sim, o cancelamento pode ser solicitado em até 7 dias após a
+              compra, desde que ocorra 48h antes do evento.
+            </p>
           </div>
         </div>
 
-        <!-- Campo para digitar e botão de enviar -->
-        <div class="chat-input-area">
-          <input
-            type="text"
-            id="inputMensagem"
-            placeholder="Digite sua mensagem..."
-            onkeydown="if(event.key === 'Enter') enviarMensagem()"
-          />
-          <button onclick="enviarMensagem()">Enviar</button>
+        <div class="ticket-form-container">
+          <h2 class="subtitulo-atendimento">📩 Abrir Chamado de Suporte</h2>
+          <p class="ticket-instrucao">
+            Não encontrou a resposta? Deixe sua dúvida que nosso suporte
+            responderá por e-mail.
+          </p>
+
+          <form class="form-ticket" onsubmit="criarTicket(event)">
+            <div class="form-group-row">
+              <input
+                type="text"
+                class="form-ticket__input"
+                placeholder="Seu Nome"
+                required
+              />
+              <input
+                type="email"
+                class="form-ticket__input"
+                placeholder="Seu E-mail"
+                required
+              />
+            </div>
+
+            <div class="form-group-row">
+              <input
+                type="text"
+                class="form-ticket__input"
+                placeholder="Número do Pedido (Opcional)"
+              />
+              <select class="form-ticket__select" required>
+                <option value="" disabled selected>Assunto do Chamado</option>
+                <option value="financeiro">Problema no Pagamento</option>
+                <option value="ingresso">Não recebi meu ingresso</option>
+                <option value="alteracao">Alteração de Dados</option>
+                <option value="outros">Outros Assuntos</option>
+              </select>
+            </div>
+
+            <textarea
+              class="form-ticket__textarea"
+              placeholder="Descreva o seu problema detalhadamente..."
+              required
+            ></textarea>
+
+            <button type="submit" class="form-ticket__btn">
+              Criar Chamado
+            </button>
+          </form>
         </div>
 
-        <!-- Informações de horário -->
-        <div class="horarios">
-          <h3>🕐 Horário de Atendimento</h3>
-          <p>Segunda a Sexta: das 9h às 20h</p>
-          <p>Sábados: das 10h às 16h</p>
-          <p>Domingos e feriados: somente pelo formulário da Ouvidoria</p>
+        <div class="acoes-container">
+          <a href="../index.html" class="btn-voltar">← Voltar para o início</a>
         </div>
-
-        <a href="../index.html" class="btn-voltar">← Voltar para o início</a>
       </div>
     </main>
 
@@ -168,53 +133,6 @@
       </div>
     </footer>
 
-    <script>
-     
-      var respostas = [
-        "Entendo! Vou verificar isso para você agora. 🎵",
-        "Claro! Para ingressos, você pode comprá-los diretamente na página do show.",
-        "Nosso prazo de resposta para casos mais complexos é de até 48 horas.",
-        "Você pode cancelar seu ingresso em até 7 dias após a compra.",
-        "Aceitamos cartão de crédito, débito e Pix.",
-        "O ingresso é enviado por e-mail em formato PDF logo após a confirmação do pagamento.",
-        "Posso te ajudar com mais alguma coisa? 😊"
-      ];
-
-      
-      var respostaAtual = 0;
-
-      function enviarMensagem() {
-        var input = document.getElementById("inputMensagem");
-        var chatBox = document.getElementById("chatBox");
-        var texto = input.value.trim(); // .trim() remove espaços desnecessários
-
-        
-        if (texto === "") return;
-
-        var msgUsuario = document.createElement("div");
-        msgUsuario.classList.add("msg-usuario");
-        msgUsuario.textContent = texto;
-        chatBox.appendChild(msgUsuario);
-
-       
-        input.value = "";
-
-        
-        chatBox.scrollTop = chatBox.scrollHeight;
-
-        setTimeout(function() {
-          var msgAtendente = document.createElement("div");
-          msgAtendente.classList.add("msg-atendente");
-
-          
-          msgAtendente.textContent = respostas[respostaAtual % respostas.length];
-          respostaAtual++;
-
-          chatBox.appendChild(msgAtendente);
-          chatBox.scrollTop = chatBox.scrollHeight;
-        }, 1000);
-      }
-    </script>
-
+    <script src="../script/script.js"></script>
   </body>
 </html>

@@ -114,4 +114,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     startMultiAutoPlay();
   }
+  function criarTicket(event) {
+    event.preventDefault();
+    // Gera um número de protocolo aleatório baseado no ano atual
+    var protocolo = "FMP" + 2026 + Math.floor(100000 + Math.random() * 900000);
+    alert(
+      "Chamado aberto com sucesso!\nGuarde seu número de protocolo: " +
+        protocolo +
+        "\n\nEnviamos uma confirmação para o seu e-mail.",
+    );
+    event.target.reset();
+  }
+  function enviarOuvidoria(event) {
+    event.preventDefault();
+    alert("Mensagem enviada com sucesso! Retornaremos em até 3 dias úteis. 🎵");
+    event.target.reset();
+  }
 });
