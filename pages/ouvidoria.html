@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ouvidoria | Festival Music Project</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/228/228770.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+
+    <header id="header">
+      <nav class="menu-desktop">
+        <ul class="menu menu-principal">
+          <li class="menu-item"><a href="../index.html" class="menu-link">HOME</a></li>
+          <li class="menu-item"><a href="../index.html#shows" class="menu-link">SHOWS EM DESTAQUE</a></li>
+          <li class="menu-item"><a href="../index.html#sobre" class="menu-link">QUEM SOMOS NÓS?</a></li>
+          <li class="menu-item"><a href="../index.html#outros-shows" class="menu-link">OUTROS SHOWS</a></li>
+          <li class="menu-item"><a href="../index.html#footer" class="menu-link active">CONTATOS</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main style="padding: 40px 20px;">
+      <div class="pagina-interna">
+        <h1>📣 Ouvidoria</h1>
+
+        <p>
+          A ouvidoria é o canal direto para você registrar reclamações, sugestões
+          ou elogios sobre os nossos serviços. Aqui a sua voz é levada a sério.
+        </p>
+
+        <p>
+          Nosso time responde em até <strong style="color: #00f5d4;">3 dias úteis</strong>.
+          Todas as mensagens são analisadas com cuidado para melhorarmos sempre.
+        </p>
+
+       
+        <form class="form-contato" onsubmit="enviarOuvidoria(event)">
+
+          <input type="text" placeholder="Seu nome completo" required />
+          <input type="email" placeholder="Seu e-mail" required />
+
+          <select required>
+            <option value="" disabled selected>Tipo de mensagem</option>
+            <option value="reclamacao">Reclamação</option>
+            <option value="sugestao">Sugestão</option>
+            <option value="elogio">Elogio</option>
+            <option value="outro">Outro</option>
+          </select>
+
+          <textarea placeholder="Descreva sua mensagem com detalhes..." required></textarea>
+
+          <button type="submit">Enviar mensagem</button>
+        </form>
+
+        <a href="../index.html" class="btn-voltar">← Voltar para o início</a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-copy">
+        &copy; 2026 Festival Music Project - Todos os direitos reservados.
+      </div>
+    </footer>
+
+    <script>
+      function enviarOuvidoria(event) {
+        event.preventDefault();
+        alert("Mensagem enviada com sucesso! Retornaremos em até 3 dias úteis. 🎵");
+        event.target.reset(); 
+      }
+    </script>
+
+  </body>
+</html>
