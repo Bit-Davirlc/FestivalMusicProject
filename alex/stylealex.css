@@ -1,0 +1,68 @@
+/* ==========================================================================
+   RESUMO DE ESTILOS (CORES, TAMANHOS E FORMATAÇÃO)
+   ========================================================================== */
+
+:root {
+  /* Paleta de Cores Base */
+  --body-bg: #e4e132b3;       /* Fundo geral do site (Preto azulado) */
+  --ticket-bg: #d5dc15;     /* Fundo do corpo do ticket (Roxo escuro) */
+  --ticket-text: #ffffff;   /* Cor de texto clara padrão */
+  --ticket-accent: #f51e1e; /* Ciano/Verde-água para destaques e hovers */
+  --ticket-border: #da341a; /* Cor das bordas internas */
+}
+
+/* --- CONFIGURAÇÕES GERAIS DE TEXTO --- */
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fonte padrão */
+}
+
+body { 
+  background-color: var(--body-bg);
+  color: #142ef2; /* Cor roxa escura para textos genéricos do body */
+}
+
+/* --- CORES DE FUNDO (BACKGROUNDS) --- */
+#header { background-color: rgba(247, 36, 8, 0.9); } /* Roxo/Magenta translúcido */
+.ticket-stub { background: rgba(233, 61, 14, 0.938); }  /* Canhoto Vermelho */
+.footer { background-color: #160505; }                      /* Rodapé Preto Total */
+.sobre-nos, .review-card, .show-card { background: #121214; } /* Cards e Seções em Preto Fosco */
+
+/* --- CORES DAS LETRAS --- */
+h2 { color: #0b0303; } /* Títulos gerais em Vermelho */
+.menu-link { color: #fc1a12; } /* Links do menu em Azul */
+.footer-col h2 { color: #df03ba; } /* Títulos do rodapé em Amarelo */
+.show-date { color: #f63d0f; background: rgba(9, 180, 172, 0.945); } /* Texto laranja no fundo ciano */
+.item h2 {
+  background: linear-gradient(45deg, #ffffff, #0e8bc0); /* Título do Ticket em Gradiente (Branco para Amarelo) */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- TAMANHOS DE FONTE (FONT-SIZE) --- */
+h2 { font-size: 2rem; }               /* ~32px - Títulos Gerais */
+.item h2 { font-size: 2.5rem; }       /* ~40px - Título do Ticket (Cai para 1.8rem em celular) */
+.show-card h3 { font-size: 1.3rem; }  /* ~21px - Título dos Shows */
+.review-card h3 { font-size: 1.2rem; }/* ~19px - Nome de quem avaliou */
+.sobre-nos p, 
+.stub-call-to-action { font-size: 1.1rem; } /* ~18px - Texto Sobre e Chamada do Canhoto */
+.menu-link, .item p { font-size: 0.95rem; }  /* ~15px - Links e subtítulos */
+.ticket-badge { font-size: 0.75rem; }        /* ~12px - Mini selos do ticket */
+.barcode-number { font-size: 0.7rem; }       /* ~11px - Número do código de barras */
+
+/* --- AJUSTES E FORMATAÇÕES DE LETRA --- */
+.menu-link, .show-date,
+.stub-call-to-action { font-weight: bold; } /* Negrito */
+.item h2 { text-transform: uppercase; }      /* Letras em MAIÚSCULO */
+.review-card p { font-style: italic; }       /* Letras em Itálico */
+
+/* Espaçamentos entre letras (Letter-spacing) */
+h2 { letter-spacing: 1px; }
+.stub-call-to-action { letter-spacing: 3px; }
+.ticket-badge { letter-spacing: 4px; } /* Letras bem espaçadas */
+
+/* Orientação Textual (Textos em pé / Verticais) */
+.stub-call-to-action,
+.barcode-number {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg); /* Fica vertical no desktop (volta ao normal no celular) */
+}

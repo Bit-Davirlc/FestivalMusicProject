@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #000;
+}
+
+.menu-principal {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.menu-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #b3b3b3;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 220px;
+    padding: 10px 15px;
+    background-color: #111;
+    color: white;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+.search-btn {
+    padding: 10px 15px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.search-btn:hover {
+    background-color: #c0ac00;
+}
+
+.search-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* =========================
+   REVIEWS SECTION
+========================= */
+
+.reviews {
+    background-color: #050505;
+    padding: 60px 30px;
+    color: white;
+    text-align: center;
+}
+
+.reviews h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+/* Container das reviews */
+.review-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card da review */
+.review {
+    background-color: #111;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.review:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 10px rgba(255, 242, 0, 0.301);
+}
+
+.review h3 {
+    color: #d6c400;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.review p {
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .review-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Celular */
+@media (max-width: 700px) {
+    .reviews {
+        padding: 40px 15px;
+    }
+
+    .reviews h2 {
+        font-size: 28px;
+    }
+
+    .review-container {
+        grid-template-columns: 1fr;
+    }
+}

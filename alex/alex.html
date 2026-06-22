@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Festival Music Project</title>
+  <link rel="stylesheet" href="stylealex.css">
+</head>
+
+  <body>
+    <div class="newsletter-container">
+      <h1 class="newsletter-title">
+        <em>FESTIVAL MUSIC <span>PROJECT</span></em>
+      </h1>
+
+      <p class="newsletter-subtitle">
+        Receba conteúdos exclusivos, dicas semanais e novidades diretamente no
+        seu e-mail.
+      </p>
+
+      <form class="newsletter-form" onsubmit="enviarNewsletter(event)">
+        <input
+          type="email"
+          class="email-input"
+          placeholder="Digite seu melhor e-mail..."
+          required
+        />
+
+        <button type="submit" class="submit-btn">Acesse Aqui</button>
+      </form>
+
+      <p class="footer-text">
+        Prometemos não enviar spam. Cancele a inscrição a qualquer momento.
+      </p>
+
+      <section class="content-section">
+        <h2>
+          <em>FESTIVAL MUSIC <span>RESUMO</span></em>
+        </h2>
+
+        <p>
+          O Festival Music Project é um evento eclético <br>
+           para todos os públicos, reunindo atrações <br>
+           nacionais e internacionais no Espaço
+          Unimed.
+        </p>
+
+        <p>
+          O público poderá contar com máxima segurança, <br>
+          conforto e uma experiência inesquecível ao <br>
+          assistir apresentações de grandes artistas como <br>
+          Roberto Carlos,Eminem, Turma do Pagode, Linkin Park <br>
+           e muitos outros nomes da música nacional e internacional.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Contatos e Dúvidas</h2>
+
+        <p>
+          Entre em contato com nossa equipe para mais <br>
+          informações sobre ingressos, programação,<br>
+           atrações e suporte ao visitante.
+        </p>
+      </section>
+    </div>
+
+    <script>
+      function enviarNewsletter(event) {
+        event.preventDefault();
+
+        const email = document.querySelector(".email-input").value;
+
+        alert(`Obrigado por se inscrever! E-mail cadastrado: ${email}`);
+      }
+    </script>
+  </body>
+</html>
