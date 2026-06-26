@@ -12,33 +12,33 @@
     <link rel="stylesheet" href="../style/style.css" />
   </head>
   <body>
-    <header id="header" class="header-container">
-      <nav class="menu-desktop">
+    <header id="cabecalho" class="recipiente-cabecalho">
+      <nav class="menu-computador">
         <ul class="menu menu-principal">
-          <li class="menu-item">
-            <a href="../index.html" class="menu-link">HOME</a>
+          <li class="item-menu">
+            <a href="../index.html" class="link-menu">HOME</a>
           </li>
-          <li class="menu-item">
-            <a href="../index.html#shows" class="menu-link"
+          <li class="item-menu">
+            <a href="../index.html#shows" class="link-menu"
               >SHOWS EM DESTAQUE</a
             >
           </li>
-          <li class="menu-item">
-            <a href="../index.html#sobre" class="menu-link">QUEM SOMOS NÓS?</a>
+          <li class="item-menu">
+            <a href="../index.html#sobre" class="link-menu">QUEM SOMOS NÓS?</a>
           </li>
-          <li class="menu-item">
-            <a href="../index.html#outros-shows" class="menu-link"
+          <li class="item-menu">
+            <a href="../index.html#outros-shows" class="link-menu"
               >OUTROS SHOWS</a
             >
           </li>
-          <li class="menu-item">
-            <a href="../index.html#footer" class="menu-link active">CONTATOS</a>
+          <li class="item-menu">
+            <a href="../index.html#rodape" class="link-menu ativo">CONTATOS</a>
           </li>
         </ul>
       </nav>
     </header>
 
-    <main class="main-content">
+    <main class="conteudo-principal">
       <div class="pagina-interna">
         <h1 class="titulo-pagina">📣 Ouvidoria</h1>
 
@@ -54,21 +54,21 @@
           mensagens são analisadas com cuidado para melhorarmos sempre.
         </p>
 
-        <form class="form-ouvidoria" onsubmit="enviarOuvidoria(event)">
+        <form class="formulario-ouvidoria" onsubmit="enviarOuvidoria(event)">
           <input
             type="text"
-            class="form-ouvidoria__input"
+            class="formulario-ouvidoria__input"
             placeholder="Seu nome completo"
             required
           />
           <input
             type="email"
-            class="form-ouvidoria__input"
+            class="formulario-ouvidoria__input"
             placeholder="Seu e-mail"
             required
           />
 
-          <select class="form-ouvidoria__select" required>
+          <select class="formulario-ouvidoria__select" required>
             <option value="" disabled selected>Tipo de mensagem</option>
             <option value="reclamacao">Reclamação</option>
             <option value="sugestao">Sugestão</option>
@@ -77,24 +77,24 @@
           </select>
 
           <textarea
-            class="form-ouvidoria__textarea"
+            class="formulario-ouvidoria__textarea"
             placeholder="Descreva sua mensagem com detalhes..."
             required
           ></textarea>
 
-          <button type="submit" class="form-ouvidoria__btn">
+          <button type="submit" class="formulario-ouvidoria__btn">
             Enviar mensagem
           </button>
         </form>
 
-        <div class="acoes-container">
-          <a href="../index.html" class="btn-voltar">← Voltar para o início</a>
+        <div class="recipiente-acoes">
+          <a href="../index.html" class="botao-voltar">← Voltar para o início</a>
         </div>
       </div>
     </main>
 
-    <footer class="footer">
-      <div class="footer-copy">
+    <footer class="rodape">
+      <div class="direitos-rodape">
         &copy; 2026 Festival Music Project - Todos os direitos reservados.
       </div>
     </footer>

@@ -1,119 +1,135 @@
 document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
-  // CARROSSEL 1: TICKETS (SHOWS EM DESTAQUE)
+  // CARROSSEL 1: INGRESSOS (SHOWS EM DESTAQUE)
   // ==========================================
-  const ticketSlides = document.querySelectorAll(".item");
-  const dots = document.querySelectorAll(".dot");
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const ticketContainer = document.querySelector(".ticket-container");
+  const slidesIngresso = document.querySelectorAll(".item");
+  const pontos = document.querySelectorAll(".ponto");
+  const botaoAnterior = document.getElementById("botaoAnterior");
+  const botaoProximo = document.getElementById("botaoProximo");
+  const recipienteIngresso = document.querySelector(".recipiente-ingresso");
 
-  let ticketIndex = 0;
-  let ticketTimer = null;
+  let indiceIngresso = 0;
+  let temporizadorIngresso = null;
 
-  function updateTicketCarousel(index) {
-    ticketSlides.forEach((slide) => slide.classList.remove("active"));
-    dots.forEach((dot) => dot.classList.remove("active"));
+  function atualizarCarrosselIngresso(indice) {
+    slidesIngresso.forEach((slide) => slide.classList.remove("ativo"));
+    pontos.forEach((ponto) => ponto.classList.remove("ativo"));
 
-    if (index >= ticketSlides.length) ticketIndex = 0;
-    else if (index < 0) ticketIndex = ticketSlides.length - 1;
-    else ticketIndex = index;
+    if (indice >= slidesIngresso.length) indiceIngresso = 0;
+    else if (indice < 0) indiceIngresso = slidesIngresso.length - 1;
+    else indiceIngresso = indice;
 
-    ticketSlides[ticketIndex].classList.add("active");
-    dots[ticketIndex].classList.add("active");
+    slidesIngresso[indiceIngresso].classList.add("ativo");
+    pontos[indiceIngresso].classList.add("ativo");
   }
 
-  function nextTicket() {
-    updateTicketCarousel(ticketIndex + 1);
+  function proximoIngresso() {
+    atualizarCarrosselIngresso(indiceIngresso + 1);
   }
-  function prevTicket() {
-    updateTicketCarousel(ticketIndex - 1);
-  }
-
-  function startTicketAutoPlay() {
-    stopTicketAutoPlay();
-    ticketTimer = setInterval(nextTicket, 6000);
-  }
-  function stopTicketAutoPlay() {
-    if (ticketTimer) clearInterval(ticketTimer);
+  function anteriorIngresso() {
+    atualizarCarrosselIngresso(indiceIngresso - 1);
   }
 
-  if (ticketSlides.length > 0 && prevBtn && nextBtn) {
-    nextBtn.addEventListener("click", () => {
-      nextTicket();
-      startTicketAutoPlay();
+  function iniciarReproducaoAutomaticaIngresso() {
+    pararReproducaoAutomaticaIngresso();
+    temporizadorIngresso = setInterval(proximoIngresso, 6000);
+  }
+  function pararReproducaoAutomaticaIngresso() {
+    if (temporizadorIngresso) clearInterval(temporizadorIngresso);
+  }
+
+  if (slidesIngresso.length > 0 && botaoAnterior && botaoProximo) {
+    botaoProximo.addEventListener("click", () => {
+      proximoIngresso();
+      iniciarReproducaoAutomaticaIngresso();
     });
-    prevBtn.addEventListener("click", () => {
-      prevTicket();
-      startTicketAutoPlay();
+    botaoAnterior.addEventListener("click", () => {
+      anteriorIngresso();
+      iniciarReproducaoAutomaticaIngresso();
     });
 
-    dots.forEach((dot, idx) => {
-      dot.addEventListener("click", () => {
-        updateTicketCarousel(idx);
-        startTicketAutoPlay();
+    pontos.forEach((ponto, idx) => {
+      ponto.addEventListener("click", () => {
+        atualizarCarrosselIngresso(idx);
+        iniciarReproducaoAutomaticaIngresso();
       });
     });
 
-    if (ticketContainer) {
-      ticketContainer.addEventListener("mouseenter", stopTicketAutoPlay);
-      ticketContainer.addEventListener("mouseleave", startTicketAutoPlay);
+    if (recipienteIngresso) {
+      recipienteIngresso.addEventListener(
+        "mouseenter",
+        pararReproducaoAutomaticaIngresso,
+      );
+      recipienteIngresso.addEventListener(
+        "mouseleave",
+        iniciarReproducaoAutomaticaIngresso,
+      );
     }
-    startTicketAutoPlay();
+    iniciarReproducaoAutomaticaIngresso();
   }
 
   // ==========================================
   // CARROSSEL 2: OUTROS SHOWS (3 ITENS SIMULTÂNEOS)
   // ==========================================
   const multiSlides = document.querySelectorAll(".multi-slide");
-  const multiPrevBtn = document.getElementById("multiPrev");
-  const multiNextBtn = document.getElementById("multiNext");
-  const multiContainer = document.querySelector(".multi-carousel-container");
+  const multiAnteriorBtn = document.getElementById("multiAnterior");
+  const multiProximoBtn = document.getElementById("multiProximo");
+  const multiRecipiente = document.querySelector(".recipiente-multi-carrossel");
 
-  let multiIndex = 0;
-  let multiTimer = null;
+  let multiIndice = 0;
+  let multiTemporizador = null;
 
-  function updateMultiCarousel(index) {
-    multiSlides.forEach((slide) => slide.classList.remove("active"));
+  function atualizarMultiCarrossel(indice) {
+    multiSlides.forEach((slide) => slide.classList.remove("ativo"));
 
-    if (index >= multiSlides.length) multiIndex = 0;
-    else if (index < 0) multiIndex = multiSlides.length - 1;
-    else multiIndex = index;
+    if (indice >= multiSlides.length) multiIndice = 0;
+    else if (indice < 0) multiIndice = multiSlides.length - 1;
+    else multiIndice = indice;
 
-    multiSlides[multiIndex].classList.add("active");
+    multiSlides[multiIndice].classList.add("ativo");
   }
 
-  function nextMulti() {
-    updateMultiCarousel(multiIndex + 1);
+  function proximoMulti() {
+    atualizarMultiCarrossel(multiIndice + 1);
   }
-  function prevMulti() {
-    updateMultiCarousel(multiIndex - 1);
-  }
-
-  function startMultiAutoPlay() {
-    stopMultiAutoPlay();
-    multiTimer = setInterval(nextMulti, 7000); // 7 segundos para leitura dos 3 cards
-  }
-  function stopMultiAutoPlay() {
-    if (multiTimer) clearInterval(multiTimer);
+  function anteriorMulti() {
+    atualizarMultiCarrossel(multiIndice - 1);
   }
 
-  if (multiSlides.length > 0 && multiPrevBtn && multiNextBtn) {
-    multiNextBtn.addEventListener("click", () => {
-      nextMulti();
-      startMultiAutoPlay();
+  function iniciarMultiReproducaoAutomatica() {
+    pararMultiReproducaoAutomatica();
+    multiTemporizador = setInterval(proximoMulti, 7000); // 7 segundos para leitura dos 3 cards
+  }
+  function pararMultiReproducaoAutomatica() {
+    if (multiTemporizador) clearInterval(multiTemporizador);
+  }
+
+  if (multiSlides.length > 0 && multiAnteriorBtn && multiProximoBtn) {
+    multiProximoBtn.addEventListener("click", () => {
+      proximoMulti();
+      iniciarMultiReproducaoAutomatica();
     });
-    multiPrevBtn.addEventListener("click", () => {
-      prevMulti();
-      startMultiAutoPlay();
+    multiAnteriorBtn.addEventListener("click", () => {
+      anteriorMulti();
+      iniciarMultiReproducaoAutomatica();
     });
 
-    if (multiContainer) {
-      multiContainer.addEventListener("mouseenter", stopMultiAutoPlay);
-      multiContainer.addEventListener("mouseleave", startMultiAutoPlay);
+    if (multiRecipiente) {
+      multiRecipiente.addEventListener(
+        "mouseenter",
+        pararMultiReproducaoAutomatica,
+      );
+      multiRecipiente.addEventListener(
+        "mouseleave",
+        iniciarMultiReproducaoAutomatica,
+      );
     }
-    startMultiAutoPlay();
+    iniciarMultiReproducaoAutomatica();
   }
+
+  // ==========================================
+  // FUNÇÕES AUXILIARES DE FORMULÁRIO
+  // ==========================================
   function criarTicket(event) {
     event.preventDefault();
     // Gera um número de protocolo aleatório baseado no ano atual
@@ -125,6 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     event.target.reset();
   }
+
   function enviarOuvidoria(event) {
     event.preventDefault();
     alert("Mensagem enviada com sucesso! Retornaremos em até 3 dias úteis. 🎵");

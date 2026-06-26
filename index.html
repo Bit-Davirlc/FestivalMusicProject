@@ -13,34 +13,34 @@
   </head>
 
   <body>
-    <header id="header">
-      <nav class="menu-desktop">
+    <header id="cabecalho">
+      <nav class="menu-computador">
         <ul class="menu menu-principal">
-          <li class="menu-item">
-            <a href="#header" class="menu-link active">HOME</a>
+          <li class="item-menu">
+            <a href="#cabecalho" class="link-menu ativo">INÍCIO</a>
           </li>
-          <li class="menu-item">
-            <a href="#shows" class="menu-link">SHOWS EM DESTAQUE</a>
+          <li class="item-menu">
+            <a href="#shows" class="link-menu">SHOWS EM DESTAQUE</a>
           </li>
-          <li class="menu-item">
-            <a href="#sobre" class="menu-link">QUEM SOMOS NÓS?</a>
+          <li class="item-menu">
+            <a href="#sobre" class="link-menu">QUEM SOMOS NÓS?</a>
           </li>
-          <li class="menu-item">
-            <a href="#outros-shows" class="menu-link">OUTROS SHOWS</a>
+          <li class="item-menu">
+            <a href="#outros-shows" class="link-menu">OUTROS SHOWS</a>
           </li>
-          <li class="menu-item">
-            <a href="#footer" class="menu-link">CONTATOS</a>
+          <li class="item-menu">
+            <a href="#rodape" class="link-menu">CONTATOS</a>
           </li>
         </ul>
 
-        <form class="search-box" role="search">
+        <form class="caixa-busca" role="search">
           <input
             type="text"
             placeholder="Pesquisar shows..."
-            class="search-input"
+            class="entrada-busca"
             aria-label="Pesquisar shows"
           />
-          <button type="submit" class="search-btn" aria-label="Buscar">
+          <button type="submit" class="botao-busca" aria-label="Buscar">
             🔍
           </button>
         </form>
@@ -50,18 +50,18 @@
     <section id="shows" class="bandas-mes">
       <h2>SHOWS EM DESTAQUE</h2>
 
-      <div class="ticket-container">
-        <div class="ticket-body">
-          <div class="ticket-border-inner">
-            <span class="ticket-badge top">★ LIVE MUSIC EXPERT ★</span>
+      <div class="recipiente-ingresso">
+        <div class="corpo-ingresso">
+          <div class="borda-interna-ingresso">
+            <span class="etiqueta-ingresso topo">★ ESPECIALISTA EM MÚSICA AO VIVO ★</span>
 
-            <div class="carousel-slide">
-              <div class="item active">
-                <h2>NEON PULSE FEST</h2>
+            <div class="carrossel-deslizante">
+              <div class="item ativo">
+                <h2>FESTIVAL NEON PULSE</h2>
                 <p>Travis Scott • The Weeknd • Olivia Rodrigo</p>
               </div>
               <div class="item">
-                <h2>CYBERBEAT STAGE</h2>
+                <h2>PALCO CYBERBEAT</h2>
                 <p>Alok • Peggy Gou • Rufus Du Sol</p>
               </div>
               <div class="item">
@@ -71,41 +71,41 @@
             </div>
 
             <button
-              class="btn-ticket prev"
-              id="prevBtn"
+              class="botao-ingresso anterior"
+              id="botaoAnterior"
               aria-label="Slide anterior"
             >
               &#10094;
             </button>
             <button
-              class="btn-ticket next"
-              id="nextBtn"
+              class="botao-ingresso proximo"
+              id="botaoProximo"
               aria-label="Próximo slide"
             >
               &#10095;
             </button>
 
-            <span class="ticket-badge bottom">★ DIGITAL PASS ★</span>
+            <span class="etiqueta-ingresso fundo">★ INGRESSO DIGITAL ★</span>
           </div>
         </div>
 
-        <div class="ticket-perforation"></div>
+        <div class="perfuracao-ingresso"></div>
 
-        <div class="ticket-stub">
-          <div class="stub-content">
-            <div class="stub-call-to-action">COMPRAR INGRESSO</div>
-            <div class="barcode">
-              <div class="barcode-lines"></div>
-              <span class="barcode-number">#FEST2026</span>
+        <div class="canhoto-ingresso">
+          <div class="conteudo-canhoto">
+            <div class="chamada-para-acao"><a href="pages/compra.html">COMPRAR INGRESSO</a></div>
+            <div class="codigo-barras">
+              <div class="linhas-codigo-barras"></div>
+              <span class="numero-codigo-barras">#FEST2026</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="carousel-indicators">
-        <span class="dot active" data-index="0"></span>
-        <span class="dot" data-index="1"></span>
-        <span class="dot" data-index="2"></span>
+      <div class="indicadores-carrossel">
+        <span class="ponto ativo" data-index="0"></span>
+        <span class="ponto" data-index="1"></span>
+        <span class="ponto" data-index="2"></span>
       </div>
     </section>
 
@@ -120,68 +120,68 @@
       </p>
     </section>
 
-    <section class="reviews">
+    <section class="avaliacoes">
       <h2>O QUE NOSSOS USUÁRIOS DIZEM</h2>
 
-      <div class="reviews-grid">
-        <div class="review-card">
-          <h3>João Silva <span class="stars">⭐⭐⭐⭐⭐</span></h3>
+      <div class="grade-avaliacoes">
+        <div class="cartao-avaliacao">
+          <h3>João Silva <span class="estrelas">⭐⭐⭐⭐⭐</span></h3>
           <p>
             "O site é muito fácil de usar e encontro shows rapidamente. O design
             é bonito e as informações são bem organizadas."
           </p>
         </div>
 
-        <div class="review-card">
-          <h3>Maria Oliveira <span class="stars">⭐⭐⭐⭐⭐</span></h3>
+        <div class="cartao-avaliacao">
+          <h3>Maria Oliveira <span class="estrelas">⭐⭐⭐⭐⭐</span></h3>
           <p>
             "Uma plataforma moderna para descobrir eventos e acompanhar os
             melhores shows."
           </p>
         </div>
 
-        <div class="review-card">
-          <h3>Carlos Santos <span class="stars">⭐⭐⭐⭐⭐</span></h3>
+        <div class="cartao-avaliacao">
+          <h3>Carlos Santos <span class="estrelas">⭐⭐⭐⭐⭐</span></h3>
           <p>
             "Excelente experiência! Encontrei ingressos para meus artistas
             favoritos de forma rápida e segura."
           </p>
         </div>
 
-        <div class="review-card">
-          <h3>Ana Costa <span class="stars">⭐⭐⭐⭐☆</span></h3>
+        <div class="cartao-avaliacao">
+          <h3>Ana Costa <span class="estrelas">⭐⭐⭐⭐☆</span></h3>
           <p>
             "O site é muito intuitivo e organizado. Gostei bastante da
             facilidade para buscar eventos na minha cidade."
           </p>
         </div>
 
-        <div class="review-card">
-          <h3>Pedro Almeida <span class="stars">⭐⭐⭐⭐⭐</span></h3>
+        <div class="cartao-avaliacao">
+          <h3>Pedro Almeida <span class="estrelas">⭐⭐⭐⭐⭐</span></h3>
           <p>
             "Design moderno e navegação fluida. As informações dos shows são
             completas e fáceis de encontrar."
           </p>
         </div>
 
-        <div class="review-card">
-          <h3>Fernanda Rocha <span class="stars">⭐⭐⭐⭐⭐</span></h3>
+        <div class="cartao-avaliacao">
+          <h3>Fernanda Rocha <span class="estrelas">⭐⭐⭐⭐⭐</span></h3>
           <p>
             "Adorei a plataforma! Descobri vários eventos interessantes que eu
             não conhecia antes."
           </p>
         </div>
 
-        <div class="review-card">
-          <h3>Lucas Ferreira <span class="stars">⭐⭐⭐⭐☆</span></h3>
+        <div class="cartao-avaliacao">
+          <h3>Lucas Ferreira <span class="estrelas">⭐⭐⭐⭐☆</span></h3>
           <p>
             "Muito prático para acompanhar a agenda de shows. A experiência foi
             rápida e sem complicações."
           </p>
         </div>
 
-        <div class="review-card">
-          <h3>Juliana Martins <span class="stars">⭐⭐⭐⭐⭐</span></h3>
+        <div class="cartao-avaliacao">
+          <h3>Juliana Martins <span class="estrelas">⭐⭐⭐⭐⭐</span></h3>
           <p>
             "Um dos melhores sites para encontrar eventos. Visual agradável e
             ótima organização das informações."
@@ -190,95 +190,94 @@
       </div>
     </section>
 
-    <section id="outros-shows" class="outros-shows-section">
+    <section id="outros-shows" class="secao-outros-shows">
       <h2>OUTROS SHOWS</h2>
-      <div class="multi-carousel-container">
+      <div class="recipiente-multi-carrossel">
         <button
-          class="btn-multi prev"
-          id="multiPrev"
+          class="botao-multi anterior"
+          id="multiAnterior"
           aria-label="Slide anterior"
         >
           &#10094;
         </button>
 
-        <div class="multi-carousel">
-          <!-- SLIDE 1: Maroon 5, BTS, Bruno Mars -->
-          <div class="multi-slide active">
-            <div class="show-card">
+        <div class="multi-carrossel">
+          <div class="multi-slide ativo">
+            <div class="cartao-show">
               <img
                 src="img/maroon.jpg"
                 alt="Maroon 5"
-                class="show-img-placeholder"
+                class="marcador-imagem-show"
               />
               <h3>Maroon 5</h3>
               <p>Allianz Parque - SP</p>
-              <span class="show-date">14 Ago 2026</span>
-              <a href="pages/compra.html" class="btn-comprar">Comprar</a>
+              <span class="data-show">14 Ago 2026</span>
+              <a href="pages/compra.html" class="botao-comprar">Comprar</a>
             </div>
-            <div class="show-card">
+            <div class="cartao-show">
               <img
                 src="img/bts.jpg"
-                alt="Maroon 5"
-                class="show-img-placeholder"
+                alt="BTS"
+                class="marcador-imagem-show"
               />
               <h3>BTS</h3>
               <p>Estádio MorumBIS - SP</p>
-              <span class="show-date">22 Set 2026</span>
-              <a href="pages/compra.html" class="btn-comprar">Comprar</a>
+              <span class="data-show">22 Set 2026</span>
+              <a href="pages/compra.html" class="botao-comprar">Comprar</a>
             </div>
-            <div class="show-card">
+            <div class="cartao-show">
               <img
                 src="img/bruno.jpg"
-                alt="Maroon 5"
-                class="show-img-placeholder"
+                alt="Bruno Mars"
+                class="marcador-imagem-show"
               />
               <h3>Bruno Mars</h3>
               <p>Jeunesse Arena - RJ</p>
-              <span class="show-date">05 Out 2026</span>
-              <a href="pages/compra.html" class="btn-comprar">Comprar</a>
+              <span class="data-show">05 Out 2026</span>
+              <a href="pages/compra.html" class="botao-comprar">Comprar</a>
             </div>
           </div>
 
           <div class="multi-slide">
-            <div class="show-card">
+            <div class="cartao-show">
               <img
                 src="img/cold.jpg"
-                alt="Maroon 5"
-                class="show-img-placeholder"
+                alt="Coldplay"
+                class="marcador-imagem-show"
               />
               <h3>Coldplay</h3>
               <p>Estádio MorumBIS - SP</p>
-              <span class="show-date">18 Nov 2026</span>
-              <a href="pages/compra.html" class="btn-comprar">Comprar</a>
+              <span class="data-show">18 Nov 2026</span>
+              <a href="pages/compra.html" class="botao-comprar">Comprar</a>
             </div>
-            <div class="show-card">
+            <div class="cartao-show">
               <img
                 src="img/iron.jpg"
                 alt="Iron Maiden"
-                class="show-img-placeholder"
+                class="marcador-imagem-show"
               />
               <h3>Iron Maiden</h3>
               <p>Cidade do Rock - RJ</p>
-              <span class="show-date">30 Nov 2026</span>
-              <a href="pages/compra.html" class="btn-comprar">Comprar</a>
+              <span class="data-show">30 Nov 2026</span>
+              <a href="pages/compra.html" class="botao-comprar">Comprar</a>
             </div>
-            <div class="show-card">
+            <div class="cartao-show">
               <img
                 src="img/harry.jpg"
-                alt="Maroon 5"
-                class="show-img-placeholder"
+                alt="Harry Styles"
+                class="marcador-imagem-show"
               />
               <h3>Harry Styles</h3>
               <p>Farmasi Arena - RJ</p>
-              <span class="show-date">12 Dez 2026</span>
-              <a href="pages/compra.html" class="btn-comprar">Comprar</a>
+              <span class="data-show">12 Dez 2026</span>
+              <a href="pages/compra.html" class="botao-comprar">Comprar</a>
             </div>
           </div>
         </div>
 
         <button
-          class="btn-multi next"
-          id="multiNext"
+          class="botao-multi proximo"
+          id="multiProximo"
           aria-label="Próximo slide"
         >
           &#10095;
@@ -286,36 +285,32 @@
       </div>
     </section>
 
-    <!-- RODAPÉ -->
-
-    <!-- SEÇÃO NEWSLETTER -->
-    <section id="newsletter" class="newsletter-container">
-      <h1 class="newsletter-title">
+    <section id="boletim" class="recipiente-boletim">
+      <h1 class="titulo-boletim">
         <em>FESTIVAL MUSIC <span>PROJECT</span></em>
       </h1>
 
-      <p class="newsletter-subtitle">
+      <p class="subtitulo-boletim">
         Receba conteúdos exclusivos, dicas semanais e novidades diretamente no
         seu e-mail.
       </p>
 
-      <form class="newsletter-form" onsubmit="enviarNewsletter(event)">
+      <form class="formulario-boletim" onsubmit="enviarBoletim(event)">
         <input
           type="email"
-          class="email-input"
+          class="entrada-email"
           placeholder="Digite seu melhor e-mail..."
           required
         />
-        <button type="submit" class="submit-btn">Acesse Aqui</button>
+        <button type="submit" class="botao-envio">Acesse Aqui</button>
       </form>
 
-      <p class="footer-text">
+      <p class="texto-rodape">
         Prometemos não enviar spam. Cancele a inscrição a qualquer momento.
       </p>
     </section>
 
-    <!-- SEÇÃO INFORMATIVA (RESUMO) -->
-    <section class="content-section">
+    <section class="secao-conteudo">
       <h2>
         <em>FESTIVAL MUSIC <span>RESUMO</span></em>
       </h2>
@@ -333,8 +328,7 @@
       </p>
     </section>
 
-    <!-- SEÇÃO DE CONTATOS -->
-    <section class="content-section">
+    <section class="secao-conteudo">
       <h2>Contatos e Dúvidas</h2>
 
       <p>
@@ -343,29 +337,26 @@
       </p>
     </section>
 
-    <!-- FOOTER -->
-
-    <footer id="footer" class="footer">
-      <div class="footer-col">
+    <footer id="rodape" class="rodape">
+      <div class="coluna-rodape">
         <h2>CONTATOS</h2>
-        <!-- Links que levam para páginas separadas -->
         <a href="pages/sobre-nos.html">Sobre nós</a>
         <a href="pages/trabalhe-conosco.html">Trabalhe conosco</a>
         <a href="pages/ouvidoria.html">Ouvidoria</a>
         <a href="pages/atendimento.html">Atendimento online</a>
       </div>
 
-      <div class="footer-col">
+      <div class="coluna-rodape">
         <h2>AUTORES</h2>
 
         <a
           href="https://github.com/Bit-Davirlc"
           target="_blank"
           rel="noopener noreferrer"
-          class="autor-link"
+          class="link-autor"
         >
           <svg
-            class="git-icon"
+            class="icone-git"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -380,10 +371,10 @@
           href="https://github.com/alexmelo15"
           target="_blank"
           rel="noopener noreferrer"
-          class="autor-link"
+          class="link-autor"
         >
           <svg
-            class="git-icon"
+            class="icone-git"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -398,10 +389,10 @@
           href="https://github.com/Paloma-90"
           target="_blank"
           rel="noopener noreferrer"
-          class="autor-link"
+          class="link-autor"
         >
           <svg
-            class="git-icon"
+            class="icone-git"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -416,10 +407,10 @@
           href="https://github.com/AlexandrinyMiguel"
           target="_blank"
           rel="noopener noreferrer"
-          class="autor-link"
+          class="link-autor"
         >
           <svg
-            class="git-icon"
+            class="icone-git"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -431,7 +422,7 @@
         </a>
       </div>
 
-      <div class="footer-copy">
+      <div class="direitos-rodape">
         &copy; 2026 Festival Music Project - Todos os direitos reservados.
       </div>
     </footer>

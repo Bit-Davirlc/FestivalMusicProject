@@ -12,33 +12,33 @@
     <link rel="stylesheet" href="../style/style.css" />
   </head>
   <body>
-    <header id="header" class="header-container">
-      <nav class="menu-desktop">
+    <header id="cabecalho" class="recipiente-cabecalho">
+      <nav class="menu-computador">
         <ul class="menu menu-principal">
-          <li class="menu-item">
-            <a href="../index.html" class="menu-link">HOME</a>
+          <li class="item-menu">
+            <a href="../index.html" class="link-menu">HOME</a>
           </li>
-          <li class="menu-item">
-            <a href="../index.html#shows" class="menu-link"
+          <li class="item-menu">
+            <a href="../index.html#shows" class="link-menu"
               >SHOWS EM DESTAQUE</a
             >
           </li>
-          <li class="menu-item">
-            <a href="../index.html#sobre" class="menu-link">QUEM SOMOS NÓS?</a>
+          <li class="item-menu">
+            <a href="../index.html#sobre" class="link-menu">QUEM SOMOS NÓS?</a>
           </li>
-          <li class="menu-item">
-            <a href="../index.html#outros-shows" class="menu-link"
+          <li class="item-menu">
+            <a href="../index.html#outros-shows" class="link-menu"
               >OUTROS SHOWS</a
             >
           </li>
-          <li class="menu-item">
-            <a href="../index.html#footer" class="menu-link active">CONTATOS</a>
+          <li class="item-menu">
+            <a href="../index.html#rodape" class="link-menu ativo">CONTATOS</a>
           </li>
         </ul>
       </nav>
     </header>
 
-    <main class="main-content">
+    <main class="conteudo-principal">
       <div class="pagina-interna">
         <h1 class="titulo-pagina">⚙️ Central de Atendimento</h1>
         <p class="texto-introducao">
@@ -47,22 +47,22 @@
         </p>
 
         <h2 class="subtitulo-atendimento">💡 Respostas Rápidas</h2>
-        <div class="faq-grid">
-          <div class="faq-card">
+        <div class="grade-faq">
+          <div class="cartao-faq">
             <h3>🎫 Como recebo meu ingresso?</h3>
             <p>
               O ingresso é enviado em formato PDF para o seu e-mail cadastrado
               logo após a confirmação do pagamento.
             </p>
           </div>
-          <div class="faq-card">
+          <div class="cartao-faq">
             <h3>💳 Quais as formas de pagamento?</h3>
             <p>
               Aceitamos Pix, cartões de crédito (com parcelamento) e cartão de
               débito.
             </p>
           </div>
-          <div class="faq-card">
+          <div class="cartao-faq">
             <h3>❌ Posso cancelar um ingresso?</h3>
             <p>
               Sim, o cancelamento pode ser solicitado em até 7 dias após a
@@ -71,36 +71,36 @@
           </div>
         </div>
 
-        <div class="ticket-form-container">
+        <div class="recipiente-formulario-ingresso">
           <h2 class="subtitulo-atendimento">📩 Abrir Chamado de Suporte</h2>
-          <p class="ticket-instrucao">
+          <p class="instrucao-ingresso">
             Não encontrou a resposta? Deixe sua dúvida que nosso suporte
             responderá por e-mail.
           </p>
 
-          <form class="form-ticket" onsubmit="criarTicket(event)">
-            <div class="form-group-row">
+          <form class="formulario-ingresso" onsubmit="criarTicket(event)">
+            <div class="linha-grupo-formulario">
               <input
                 type="text"
-                class="form-ticket__input"
+                class="formulario-ingresso__input"
                 placeholder="Seu Nome"
                 required
               />
               <input
                 type="email"
-                class="form-ticket__input"
+                class="formulario-ingresso__input"
                 placeholder="Seu E-mail"
                 required
               />
             </div>
 
-            <div class="form-group-row">
+            <div class="linha-grupo-formulario">
               <input
                 type="text"
-                class="form-ticket__input"
+                class="formulario-ingresso__input"
                 placeholder="Número do Pedido (Opcional)"
               />
-              <select class="form-ticket__select" required>
+              <select class="formulario-ingresso__select" required>
                 <option value="" disabled selected>Assunto do Chamado</option>
                 <option value="financeiro">Problema no Pagamento</option>
                 <option value="ingresso">Não recebi meu ingresso</option>
@@ -110,25 +110,25 @@
             </div>
 
             <textarea
-              class="form-ticket__textarea"
+              class="formulario-ingresso__textarea"
               placeholder="Descreva o seu problema detalhadamente..."
               required
             ></textarea>
 
-            <button type="submit" class="form-ticket__btn">
+            <button type="submit" class="formulario-ingresso__btn">
               Criar Chamado
             </button>
           </form>
         </div>
 
-        <div class="acoes-container">
-          <a href="../index.html" class="btn-voltar">← Voltar para o início</a>
+        <div class="recipiente-acoes">
+          <a href="../index.html" class="botao-voltar">← Voltar para o início</a>
         </div>
       </div>
     </main>
 
-    <footer class="footer">
-      <div class="footer-copy">
+    <footer class="rodape">
+      <div class="direitos-rodape">
         &copy; 2026 Festival Music Project - Todos os direitos reservados.
       </div>
     </footer>

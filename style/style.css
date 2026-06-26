@@ -1,13 +1,39 @@
-/* ==========================================================================
-   1. CONFIGURAÇÕES GERAIS (RESET & VARIÁVEIS)
-   ========================================================================== */
+/* ========================================================================== 
+    1. CONFIGURAÇÕES GERAIS (REDEFINIÇÕES & VARIÁVEIS) 
+    ========================================================================== */
 :root {
-  --ticket-bg: #16161f;
-  --ticket-text: #ffffff;
-  --ticket-accent: #00f5d4;
-  --ticket-border: #333344;
-  --body-bg: #0d0d11;
-  --brand-yellow: #ffbe0b;
+  /* Cores Originais do Tema */
+  --ingresso-fundo: #16161f;
+  --ingresso-texto: #ffffff;
+  --ingresso-destaque: #00f5d4;
+  --ingresso-borda: #333344;
+  --corpo-fundo: #0d0d11;
+  --marca-amarelo: #ffbe0b;
+
+  /* Novas Variáveis para Elementos Gerais (Suporte para Light Mode) */
+  --corpo-texto: #ffffff;
+  --cabecalho-fundo: rgba(0, 0, 0, 0.9);
+  --texto-secundario: #8e8e9f;
+  --texto-mutado: #666677;
+  --texto-suave: #cccccc;
+  --texto-opaco: #aaaaaaaa;
+
+  /* Fundos de Componentes */
+  --componente-fundo-escuro: #121214;
+  --componente-fundo-medio: #1c1c24;
+  --componente-fundo-claro: #232330;
+  --canhoto-fundo: rgba(0, 0, 0, 0.2);
+  --botao-carrossel-fundo: rgba(255, 255, 255, 0.03);
+
+  /* Inputs, Bordas e Elementos Interativos */
+  --borda-suave: #232329;
+  --borda-input: #333344;
+  --borda-generica: #222222;
+  --borda-card: #2d2d38;
+  --input-fundo: #222222;
+  --ponto-carrossel-fundo: #222230;
+  --ponto-carrossel-borda: #444444;
+  --codigo-barras-cor: #ffffff;
 }
 
 * {
@@ -19,32 +45,32 @@
 }
 
 body {
-  background-color: var(--body-bg);
-  color: #fff;
+  background-color: var(--corpo-fundo);
+  color: var(--corpo-texto);
   overflow-x: hidden;
 }
 
 h2 {
   text-align: center;
-  color: var(--brand-yellow);
+  color: var(--marca-amarelo);
   font-size: 2rem;
   margin-bottom: 30px;
   letter-spacing: 1px;
 }
 
-/* ==========================================================================
-   2. HEADER, MENU & BUSCA
-   ========================================================================== */
-#header {
-  background-color: rgba(0, 0, 0, 0.9);
+/* ========================================================================== 
+    2. CABEÇALHO, MENU & BUSCA 
+    ========================================================================== */
+#cabecalho {
+  background-color: var(--cabecalho-fundo);
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 2px solid var(--brand-yellow);
+  border-bottom: 2px solid var(--marca-amarelo);
   padding: 15px 5%;
 }
 
-.menu-desktop {
+.menu-computador {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,49 +84,49 @@ h2 {
   gap: 20px;
 }
 
-.menu-link {
-  color: #fff;
+.link-menu {
+  color: var(--corpo-texto);
   text-decoration: none;
   font-weight: bold;
   font-size: 0.9rem;
   transition: color 0.3s;
 }
 
-.menu-link:hover,
-.menu-link.active {
-  color: var(--ticket-accent);
+.link-menu:hover,
+.link-menu.ativo {
+  color: var(--ingresso-destaque);
 }
 
-.search-box {
+.caixa-busca {
   display: flex;
   align-items: center;
 }
 
-.search-input {
+.entrada-busca {
   padding: 8px 15px;
-  border: 1px solid #333;
+  border: 1px solid var(--borda-input);
   border-radius: 20px 0 0 20px;
-  background: #222;
-  color: white;
+  background: var(--input-fundo);
+  color: var(--corpo-texto);
   outline: none;
 }
 
-.search-btn {
+.botao-busca {
   padding: 8px 15px;
-  background-color: var(--brand-yellow);
+  background-color: var(--marca-amarelo);
   border: none;
   border-radius: 0 20px 20px 0;
   cursor: pointer;
   transition: background 0.3s;
 }
 
-.search-btn:hover {
-  background-color: var(--ticket-accent);
+.botao-busca:hover {
+  background-color: var(--ingresso-destaque);
 }
 
-/* ==========================================================================
-   3. SEÇÃO DO CARROSSEL 1 (TICKET)
-   ========================================================================== */
+/* ========================================================================== 
+    3. SEÇÃO DO CARROSSEL 1 (INGRESSO) - VERSÃO ALONGADA 
+    ========================================================================== */
 .bandas-mes {
   padding: 60px 20px;
   max-width: 1200px;
@@ -111,46 +137,46 @@ h2 {
   gap: 25px;
 }
 
-.ticket-container {
+.recipiente-ingresso {
   display: flex;
   position: relative;
   width: 100%;
-  max-width: 850px;
+  max-width: 1050px;
   height: 380px;
-  background-color: var(--ticket-bg);
+  background-color: var(--ingresso-fundo);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 20px 50px rgba(0, 245, 212, 0.1);
   overflow: hidden;
 }
 
-.ticket-container::before,
-.ticket-container::after {
+.recipiente-ingresso::before,
+.recipiente-ingresso::after {
   content: "";
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
-  background-color: var(--body-bg);
+  background-color: var(--corpo-fundo);
   border-radius: 50%;
   z-index: 5;
 }
-.ticket-container::before {
+.recipiente-ingresso::before {
   left: -15px;
 }
-.ticket-container::after {
+.recipiente-ingresso::after {
   right: -15px;
 }
 
-.ticket-body {
-  flex: 3;
-  padding: 25px 35px;
+.corpo-ingresso {
+  flex: 4;
+  padding: 25px 45px;
   position: relative;
 }
 
-.ticket-border-inner {
-  border: 1px dashed var(--ticket-border);
+.borda-interna-ingresso {
+  border: 1px dashed var(--ingresso-borda);
   border-radius: 12px;
   height: 100%;
   width: 100%;
@@ -166,22 +192,22 @@ h2 {
   );
 }
 
-.ticket-badge {
+.etiqueta-ingresso {
   position: absolute;
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 4px;
-  color: var(--ticket-accent);
+  color: var(--ingresso-destaque);
 }
-.ticket-badge.top {
+.etiqueta-ingresso.topo {
   top: 15px;
 }
-.ticket-badge.bottom {
+.etiqueta-ingresso.fundo {
   bottom: 15px;
 }
 
-.carousel-slide {
-  width: 80%;
+.carrossel-deslizante {
+  width: 85%;
   height: 60%;
   position: relative;
 }
@@ -197,43 +223,43 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--ticket-text);
+  color: var(--ingresso-texto);
   text-align: center;
 }
 
 .item h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -1px;
   margin-bottom: 10px;
-  background: linear-gradient(45deg, #fff, var(--brand-yellow));
+  background: linear-gradient(45deg, var(--corpo-texto), var(--marca-amarelo));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .item p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
-  color: #8e8e9f;
+  color: var(--texto-secundario);
   letter-spacing: 1px;
 }
 
-.item.active {
+.item.ativo {
   opacity: 1;
   transform: scale(1);
   z-index: 2;
 }
 
-.btn-ticket {
+.botao-ingresso {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--botao-carrossel-fundo);
   border: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 1.3rem;
-  color: #fff;
+  color: var(--corpo-texto);
   cursor: pointer;
   z-index: 10;
   width: 42px;
@@ -244,36 +270,36 @@ h2 {
   justify-content: center;
   transition: all 0.3s;
 }
-.btn-ticket:hover {
-  background: var(--ticket-accent);
-  color: #000;
-  box-shadow: 0 0 15px var(--ticket-accent);
-  border-color: var(--ticket-accent);
+.botao-ingresso:hover {
+  background: var(--ingresso-destaque);
+  color: #000000;
+  box-shadow: 0 0 15px var(--ingresso-destaque);
+  border-color: var(--ingresso-destaque);
 }
-.prev {
-  left: 15px;
+.anterior {
+  left: 20px;
 }
-.next {
-  right: 15px;
+.proximo {
+  right: 20px;
 }
 
-.ticket-perforation {
+.perfuracao-ingresso {
   width: 2px;
-  border-left: 2px dashed var(--body-bg);
+  border-left: 2px dashed var(--corpo-fundo);
   height: 100%;
 }
 
-.ticket-stub {
-  flex: 1.1;
+.canhoto-ingresso {
+  flex: 1;
   padding: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--canhoto-fundo);
 }
 
-.stub-content {
-  border: 1px solid var(--ticket-border);
+.conteudo-canhoto {
+  border: 1px solid var(--ingresso-borda);
   border-radius: 12px;
   height: 100%;
   width: 100%;
@@ -283,8 +309,8 @@ h2 {
   padding: 20px;
 }
 
-.stub-call-to-action {
-  color: var(--ticket-text);
+.chamada-para-acao {
+  color: var(--ingresso-texto);
   font-size: 1.1rem;
   font-weight: 800;
   text-align: center;
@@ -293,11 +319,11 @@ h2 {
   letter-spacing: 3px;
 }
 
-.ticket-container:hover .stub-call-to-action {
-  color: var(--ticket-accent);
+.recipiente-ingresso:hover .chamada-para-acao {
+  color: var(--ingresso-destaque);
 }
 
-.barcode {
+.codigo-barras {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -306,26 +332,26 @@ h2 {
   width: 45px;
 }
 
-.barcode-lines {
+.linhas-codigo-barras {
   width: 24px;
   height: 85%;
   background: repeating-linear-gradient(
     90deg,
-    #fff,
-    #fff 2px,
+    var(--codigo-barras-cor),
+    var(--codigo-barras-cor) 2px,
     transparent 2px,
     transparent 5px,
-    #fff 5px,
-    #fff 7px,
+    var(--codigo-barras-cor) 5px,
+    var(--codigo-barras-cor) 7px,
     transparent 7px,
     transparent 10px
   );
   opacity: 0.8;
 }
 
-.barcode-number {
+.numero-codigo-barras {
   font-size: 0.7rem;
-  color: #666677;
+  color: var(--texto-mutado);
   letter-spacing: 1px;
   font-family: monospace;
   writing-mode: vertical-rl;
@@ -333,37 +359,80 @@ h2 {
   margin-top: 8px;
 }
 
-.carousel-indicators {
+.indicators-carrossel,
+.indicadores-carrossel {
   display: flex;
   gap: 10px;
 }
 
-.dot {
+.ponto {
   width: 10px;
   height: 10px;
-  background-color: #222230;
-  border: 1px solid #444;
+  background-color: var(--ponto-carrossel-fundo);
+  border: 1px solid var(--ponto-carrossel-borda);
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.dot.active {
-  background-color: var(--ticket-accent);
-  box-shadow: 0 0 10px var(--ticket-accent);
+.ponto.ativo {
+  background-color: var(--ingresso-destaque);
+  box-shadow: 0 0 10px var(--ingresso-destaque);
   transform: scale(1.2);
 }
 
-/* ==========================
-   4. SEÇÃO DO CARROSSEL 2 (OUTROS SHOWS - 3 ITENS)
-   ========================== */
-.outros-shows-section {
+.chamada-para-acao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chamada-para-acao a {
+  display: inline-block;
+  color: #000000;
+  background-color: var(--ingresso-destaque);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 2px solid var(--ingresso-destaque);
+  box-shadow: 0 0 10px rgba(0, 245, 212, 0.2);
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+
+.chamada-para-acao a:hover {
+  background-color: transparent;
+  color: var(--ingresso-destaque);
+  border-color: var(--ingresso-destaque);
+  box-shadow: 0 0 15px rgba(0, 245, 212, 0.5);
+  transform: scale(1.03);
+}
+
+.chamada-para-acao a:active {
+  transform: scale(0.97);
+}
+
+/* ========================== 
+    4. SEÇÃO DO CARROSSEL 2 (OUTROS SHOWS - 3 ITENS) 
+    ========================== */
+.secao-outros-shows {
   padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.multi-carousel-container {
+.recipiente-multi-carrossel {
   position: relative;
   display: flex;
   align-items: center;
@@ -371,7 +440,7 @@ h2 {
   width: 100%;
 }
 
-.multi-carousel {
+.multi-carrossel {
   width: 100%;
   max-width: 1050px;
   height: 320px;
@@ -394,16 +463,16 @@ h2 {
   pointer-events: none;
 }
 
-.multi-slide.active {
+.multi-slide.ativo {
   opacity: 1;
   transform: scale(1);
   position: relative;
   pointer-events: auto;
 }
 
-.show-card {
-  background: #121214;
-  border: 1px solid #232329;
+.cartao-show {
+  background: var(--componente-fundo-escuro);
+  border: 1px solid var(--borda-suave);
   border-radius: 12px;
   padding: 25px;
   display: flex;
@@ -416,15 +485,15 @@ h2 {
     box-shadow 0.3s;
 }
 
-.show-card:hover {
-  border-color: var(--ticket-accent);
+.cartao-show:hover {
+  border-color: var(--ingresso-destaque);
   box-shadow: 0 5px 15px rgba(0, 245, 212, 0.15);
 }
 
-.show-img-placeholder {
+.marcador-imagem-show {
   font-size: 3rem;
   margin-bottom: 15px;
-  background: #1c1c24;
+  background: var(--componente-fundo-medio);
   width: 80px;
   height: 80px;
   display: flex;
@@ -434,42 +503,27 @@ h2 {
   object-fit: cover;
 }
 
-.show-card h3 {
+.cartao-show h3 {
   font-size: 1.3rem;
-  color: #fff;
+  color: var(--corpo-texto);
   margin-bottom: 5px;
 }
 
-.show-card {
-  background: #121214;
-  border: 1px solid #232329;
-  border-radius: 12px;
-  padding: 25px;
-  display: flex;
-  flex-direction: column; /* Alinha os itens em formato de coluna vertical */
-  justify-content: center;
-  align-items: center; /* Centraliza o botão e a data no meio do card */
-  text-align: center;
-  transition:
-    border-color 0.3s,
-    box-shadow 0.3s;
-}
-
-.show-date {
-  display: inline-block; /* Permite aplicar a margem vertical corretamente */
-  margin-bottom: 15px; /* Cria o espaçamento de 15px em relação ao botão Comprar */
+.data-show {
+  display: inline-block;
+  margin-bottom: 15px;
   font-size: 0.85rem;
-  color: var(--brand-yellow);
+  color: var(--marca-amarelo);
   font-weight: bold;
   background: rgba(255, 190, 11, 0.1);
   padding: 4px 12px;
   border-radius: 20px;
 }
 
-.btn-multi {
-  background: #121214;
-  border: 1px solid #333;
-  color: #fff;
+.botao-multi {
+  background: var(--componente-fundo-escuro);
+  border: 1px solid var(--borda-input);
+  color: var(--corpo-texto);
   font-size: 1.2rem;
   width: 45px;
   height: 45px;
@@ -483,104 +537,104 @@ h2 {
   transition: all 0.3s;
 }
 
-.btn-multi:hover {
-  background: var(--brand-yellow);
-  color: #000;
-  border-color: var(--brand-yellow);
+.botao-multi:hover {
+  background: var(--marca-amarelo);
+  color: #000000;
+  border-color: var(--marca-amarelo);
 }
 
-#multiPrev {
+#multiAnterior {
   left: -25px;
 }
-#multiNext {
+#multiProximo {
   right: -25px;
 }
 
-/* ==========================================================================
-   5. QUEM SOMOS, AVALIAÇÕES E CONTEÚDO CORRENTE
-   ========================================================================== */
+/* ========================================================================== 
+    5. QUEM SOMOS, AVALIAÇÕES E CONTEÚDO CORRENTE 
+    ========================================================================== */
 .sobre-nos {
   padding: 60px 20px;
-  background-color: #121214;
+  background-color: var(--componente-fundo-escuro);
   text-align: center;
   max-width: 800px;
   margin: 40px auto;
   border-radius: 8px;
-  border-left: 4px solid var(--ticket-accent);
+  border-left: 4px solid var(--ingresso-destaque);
 }
 
 .sobre-nos p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #ccc;
+  color: var(--texto-suave);
 }
 
-.reviews {
+.avaliacoes {
   padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.reviews-grid {
+.grade-avaliacoes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
-.review-card {
-  background: #121214;
+.cartao-avaliacao {
+  background: var(--componente-fundo-escuro);
   padding: 25px;
   border-radius: 8px;
-  border: 1px solid #222;
+  border: 1px solid var(--borda-generica);
   transition: transform 0.3s;
 }
 
-.review-card:hover {
+.cartao-avaliacao:hover {
   transform: translateY(-5px);
-  border-color: var(--brand-yellow);
+  border-color: var(--marca-amarelo);
 }
 
-.review-card h3 {
+.cartao-avaliacao h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
 }
 
-.review-card p {
-  color: #aaa;
+.cartao-avaliacao p {
+  color: var(--texto-opaco);
   font-style: italic;
   line-height: 1.4;
 }
 
-.content-section {
+.secao-conteudo {
   padding: 40px 20px;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.content-section h2 {
+.secao-conteudo h2 {
   text-align: left;
   margin-bottom: 15px;
 }
 
-.content-section h2 span {
-  color: var(--ticket-accent);
+.secao-conteudo h2 span {
+  color: var(--ingresso-destaque);
 }
 
-.content-section p {
+.secao-conteudo p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #ccc;
+  color: var(--texto-suave);
   margin-bottom: 20px;
 }
 
-/* ==========================================================================
-   6. NOVA SEÇÃO: NEWSLETTER
-   ========================================================================== */
-.newsletter-container {
-  background-color: #16161f;
-  border: 1px solid #232329;
+/* ========================================================================== 
+    6. NOVA SEÇÃO: BOLETIM INFORMATIVO (NEWSLETTER) 
+    ========================================================================== */
+.recipiente-boletim {
+  background-color: var(--ingresso-fundo);
+  border: 1px solid var(--borda-suave);
   border-radius: 16px;
   max-width: 800px;
   margin: 40px auto;
@@ -589,18 +643,18 @@ h2 {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.newsletter-title {
+.titulo-boletim {
   font-size: 2.2rem;
-  color: #fff;
+  color: var(--corpo-texto);
   margin-bottom: 15px;
   letter-spacing: 1px;
 }
 
-.newsletter-title span {
-  color: var(--ticket-accent);
+.titulo-boletim span {
+  color: var(--ingresso-destaque);
 }
 
-.newsletter-subtitle {
+.subtitulo-boletim {
   font-size: 1.1rem;
   color: #a3a3b3;
   margin-bottom: 30px;
@@ -610,20 +664,20 @@ h2 {
   line-height: 1.5;
 }
 
-.newsletter-form {
+.formulario-boletim {
   display: flex;
   gap: 15px;
   max-width: 600px;
   margin: 0 auto 20px auto;
 }
 
-.email-input {
+.entrada-email {
   flex: 1;
-  background-color: var(--body-bg);
-  border: 1px solid #333344;
+  background-color: var(--corpo-fundo);
+  border: 1px solid var(--borda-input);
   border-radius: 8px;
   padding: 14px 20px;
-  color: #ffffff;
+  color: var(--corpo-texto);
   font-size: 1rem;
   outline: none;
   transition:
@@ -631,13 +685,13 @@ h2 {
     box-shadow 0.3s;
 }
 
-.email-input:focus {
-  border-color: var(--ticket-accent);
+.entrada-email:focus {
+  border-color: var(--ingresso-destaque);
   box-shadow: 0 0 8px rgba(0, 245, 212, 0.2);
 }
 
-.submit-btn {
-  background-color: var(--brand-yellow);
+.botao-envio {
+  background-color: var(--marca-amarelo);
   color: #000000;
   border: none;
   border-radius: 8px;
@@ -651,50 +705,50 @@ h2 {
     box-shadow 0.3s;
 }
 
-.submit-btn:hover {
-  background-color: var(--ticket-accent);
+.botao-envio:hover {
+  background-color: var(--ingresso-destaque);
   box-shadow: 0 0 15px rgba(0, 245, 212, 0.3);
 }
 
-.submit-btn:active {
+.botao-envio:active {
   transform: scale(0.98);
 }
 
-.footer-text {
+.texto-rodape {
   font-size: 0.85rem;
-  color: #666677;
+  color: var(--texto-mutado);
 }
 
 @media (max-width: 600px) {
-  .newsletter-form {
+  .formulario-boletim {
     flex-direction: column;
     gap: 12px;
   }
-  .submit-btn {
+  .botao-envio {
     width: 100%;
   }
 }
 
-/* ==========================================================================
-   7. PÁGINAS INTERNAS (SOBRE NÓS, OUVIDORIA, VAGAS, COMPRAS)
-   ========================================================================== */
-.main-content {
+/* ========================================================================== 
+    7. PÁGINAS INTERNAS (SOBRE NÓS, OUVIDORIA, VAGAS, COMPRAS) 
+    ========================================================================== */
+.conteudo-principal {
   padding: 40px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .pagina-interna {
-  background-color: #121214;
+  background-color: var(--componente-fundo-escuro);
   border-radius: 16px;
-  border: 1px solid #232329;
+  border: 1px solid var(--borda-suave);
   padding: 40px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .titulo-pagina {
   font-size: 2.5rem;
-  color: var(--brand-yellow);
+  color: var(--marca-amarelo);
   margin-bottom: 20px;
   letter-spacing: 1px;
 }
@@ -702,22 +756,21 @@ h2 {
 .texto-introducao {
   font-size: 1.15rem;
   line-height: 1.8;
-  color: #cccccc;
+  color: var(--texto-suave);
   max-width: 900px;
   margin-bottom: 40px;
 }
 
-/* --- Equipe --- */
-.time-container {
+.recipiente-equipe {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
   margin-bottom: 40px;
 }
 
-.time-card {
-  background: #1c1c24;
-  border: 1px solid #2d2d38;
+.cartao-equipe {
+  background: var(--componente-fundo-medio);
+  border: 1px solid var(--borda-card);
   border-radius: 12px;
   padding: 25px 20px;
   display: flex;
@@ -730,61 +783,60 @@ h2 {
     box-shadow 0.3s ease;
 }
 
-.time-card:hover {
+.cartao-equipe:hover {
   transform: translateY(-5px);
-  border-color: var(--ticket-accent);
+  border-color: var(--ingresso-destaque);
   box-shadow: 0 10px 20px rgba(0, 245, 212, 0.1);
 }
 
-.time-card__foto {
+.cartao-equipe__foto {
   width: 90px;
   height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--brand-yellow);
-  background-color: #121214;
+  border: 2px solid var(--marca-amarelo);
+  background-color: var(--componente-fundo-escuro);
   margin-bottom: 15px;
   padding: 5px;
   transition: border-color 0.3s;
 }
 
-.time-card:hover .time-card__foto {
-  border-color: var(--ticket-accent);
+.cartao-equipe:hover .cartao-equipe__foto {
+  border-color: var(--ingresso-destaque);
 }
 
-.time-card__nome {
+.cartao-equipe__nome {
   font-size: 1.25rem;
   margin-bottom: 8px;
 }
 
-.time-card__link {
-  color: #ffffff;
+.cartao-equipe__link {
+  color: var(--corpo-texto);
   text-decoration: none;
   transition: color 0.3s;
 }
 
-.time-card__link:hover {
-  color: var(--brand-yellow);
+.cartao-equipe__link:hover {
+  color: var(--marca-amarelo);
   text-decoration: underline;
 }
 
-.time-card__cargo {
+.cartao-equipe__cargo {
   font-size: 0.9rem;
-  color: #8e8e9f;
+  color: var(--texto-secundario);
   line-height: 1.4;
 }
 
-/* --- Trabalhe Conosco (Vagas) --- */
-.vagas-grid {
+.grade-vagas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin: 30px 0;
 }
 
-.vaga-card {
-  background: #1c1c24;
-  border: 1px solid #232329;
+.cartao-vaga {
+  background: var(--componente-fundo-medio);
+  border: 1px solid var(--borda-suave);
   border-radius: 12px;
   padding: 25px;
   display: flex;
@@ -795,21 +847,21 @@ h2 {
     transform 0.3s;
 }
 
-.vaga-card:hover {
+.cartao-vaga:hover {
   transform: translateY(-5px);
-  border-color: var(--brand-yellow);
+  border-color: var(--marca-amarelo);
   box-shadow: 0 5px 15px rgba(255, 190, 11, 0.1);
 }
 
-.vaga-card__titulo {
+.cartao-vaga__titulo {
   font-size: 1.3rem;
-  color: #fff;
+  color: var(--corpo-texto);
   margin-bottom: 12px;
 }
 
-.vaga-card__descricao {
+.cartao-vaga__descricao {
   font-size: 0.95rem;
-  color: #8e8e9f;
+  color: var(--texto-secundario);
   line-height: 1.5;
 }
 
@@ -817,21 +869,20 @@ h2 {
   margin-top: 40px;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #ccc;
+  color: var(--texto-suave);
 }
 
-.vaga-email {
-  color: var(--ticket-accent);
+.email-vaga {
+  color: var(--ingresso-destaque);
   font-weight: bold;
 }
 
-/* --- Ouvidoria & Formulários --- */
 .prazo-destaque {
-  color: var(--ticket-accent);
+  color: var(--ingresso-destaque);
   font-weight: bold;
 }
 
-.form-ouvidoria {
+.formulario-ouvidoria {
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -839,15 +890,15 @@ h2 {
   margin: 35px 0;
 }
 
-.form-ouvidoria__input,
-.form-ouvidoria__select,
-.form-ouvidoria__textarea {
+.formulario-ouvidoria__input,
+.formulario-ouvidoria__select,
+.formulario-ouvidoria__textarea {
   width: 100%;
-  background-color: #1c1c24;
-  border: 1px solid #333344;
+  background-color: var(--componente-fundo-medio);
+  border: 1px solid var(--borda-input);
   border-radius: 8px;
   padding: 14px 16px;
-  color: #ffffff;
+  color: var(--corpo-texto);
   font-size: 1rem;
   outline: none;
   transition:
@@ -855,19 +906,19 @@ h2 {
     box-shadow 0.3s;
 }
 
-.form-ouvidoria__input:focus,
-.form-ouvidoria__select:focus,
-.form-ouvidoria__textarea:focus {
-  border-color: var(--ticket-accent);
+.formulario-ouvidoria__input:focus,
+.formulario-ouvidoria__select:focus,
+.formulario-ouvidoria__textarea:focus {
+  border-color: var(--ingresso-destaque);
   box-shadow: 0 0 8px rgba(0, 245, 212, 0.2);
 }
 
-.form-ouvidoria__textarea {
+.formulario-ouvidoria__textarea {
   height: 150px;
   resize: vertical;
 }
 
-.form-ouvidoria__select {
+.formulario-ouvidoria__select {
   cursor: pointer;
   appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'><path stroke='%238e8e9f' stroke-width='2' d='m1 1 4 4 4-4'/></svg>");
@@ -875,8 +926,8 @@ h2 {
   background-position: right 16px center;
 }
 
-.form-ouvidoria__btn {
-  background-color: var(--brand-yellow);
+.formulario-ouvidoria__btn {
+  background-color: var(--marca-amarelo);
   color: #000000;
   border: none;
   border-radius: 8px;
@@ -891,102 +942,101 @@ h2 {
     box-shadow 0.3s;
 }
 
-.form-ouvidoria__btn:hover {
-  background-color: var(--ticket-accent);
+.formulario-ouvidoria__btn:hover {
+  background-color: var(--ingresso-destaque);
   box-shadow: 0 0 15px rgba(0, 245, 212, 0.3);
 }
 
-.form-ouvidoria__btn:active {
+.formulario-ouvidoria__btn:active {
   transform: scale(0.98);
 }
 
-/* --- Central de Atendimento & Chat / FAQ --- */
 .subtitulo-atendimento {
   font-size: 1.6rem;
-  color: var(--brand-yellow);
+  color: var(--marca-amarelo);
   margin: 30px 0 15px 0;
   text-align: left;
   letter-spacing: 0.5px;
 }
 
-.faq-grid {
+.grade-faq {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   margin-bottom: 40px;
 }
 
-.faq-card {
-  background: #1c1c24;
-  border: 1px solid #232329;
-  border-top: 3px solid var(--ticket-accent);
+.cartao-faq {
+  background: var(--componente-fundo-medio);
+  border: 1px solid var(--borda-suave);
+  border-top: 3px solid var(--ingresso-destaque);
   border-radius: 8px;
   padding: 20px;
 }
 
-.faq-card h3 {
+.cartao-faq h3 {
   font-size: 1.1rem;
-  color: #ffffff;
+  color: var(--corpo-texto);
   margin-bottom: 10px;
 }
 
-.faq-card p {
+.cartao-faq p {
   font-size: 0.9rem;
   color: #a3a3b3;
   line-height: 1.5;
 }
 
-.ticket-form-container {
-  background: #16161f;
-  border: 1px solid #232329;
+.recipiente-formulario-ingresso {
+  background: var(--ingresso-fundo);
+  border: 1px solid var(--borda-suave);
   border-radius: 12px;
   padding: 30px;
   margin-top: 20px;
 }
 
-.ticket-instrucao {
-  color: #ccc;
+.instrucao-ingresso {
+  color: var(--texto-suave);
   font-size: 0.95rem;
   margin-bottom: 25px;
 }
 
-.form-ticket {
+.formulario-ingresso {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.form-group-row {
+.linha-grupo-formulario {
   display: flex;
   gap: 15px;
 }
 
-.form-ticket__input,
-.form-ticket__select,
-.form-ticket__textarea {
+.formulario-ingresso__input,
+.formulario-ingresso__select,
+.formulario-ingresso__textarea {
   flex: 1;
-  background-color: #0d0d11;
-  border: 1px solid #333344;
+  background-color: var(--corpo-fundo);
+  border: 1px solid var(--borda-input);
   border-radius: 6px;
   padding: 12px 14px;
-  color: #ffffff;
+  color: var(--corpo-texto);
   font-size: 0.95rem;
   outline: none;
   transition: border-color 0.3s;
 }
 
-.form-ticket__input:focus,
-.form-ticket__select:focus,
-.form-ticket__textarea:focus {
-  border-color: var(--ticket-accent);
+.formulario-ingresso__input:focus,
+.formulario-ingresso__select:focus,
+.formulario-ingresso__textarea:focus {
+  border-color: var(--ingresso-destaque);
 }
 
-.form-ticket__textarea {
+.formulario-ingresso__textarea {
   height: 120px;
   resize: none;
 }
 
-.form-ticket__select {
+.formulario-ingresso__select {
   cursor: pointer;
   appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'><path stroke='%238e8e9f' stroke-width='2' d='m1 1 4 4 4-4'/></svg>");
@@ -994,9 +1044,9 @@ h2 {
   background-position: right 14px center;
 }
 
-.form-ticket__btn {
-  background-color: var(--brand-yellow);
-  color: #000;
+.formulario-ingresso__btn {
+  background-color: var(--marca-amarelo);
+  color: #000000;
   border: none;
   border-radius: 6px;
   padding: 14px 28px;
@@ -1009,18 +1059,18 @@ h2 {
     transform 0.1s;
 }
 
-.form-ticket__btn:hover {
-  background-color: var(--ticket-accent);
+.formulario-ingresso__btn:hover {
+  background-color: var(--ingresso-destaque);
   box-shadow: 0 0 12px rgba(0, 245, 212, 0.2);
 }
 
-.form-ticket__btn:active {
+.formulario-ingresso__btn:active {
   transform: scale(0.98);
 }
 
-.chat-box {
-  background: #1c1c24;
-  border: 1px solid #333;
+.caixa-batepapo {
+  background: var(--componente-fundo-medio);
+  border: 1px solid var(--borda-input);
   border-radius: 12px;
   height: 350px;
   overflow-y: auto;
@@ -1033,53 +1083,53 @@ h2 {
 
 .msg-atendente {
   align-self: flex-start;
-  background: #232330;
-  border: 1px solid #333;
+  background: var(--componente-fundo-claro);
+  border: 1px solid var(--borda-input);
   border-radius: 0 12px 12px 12px;
   padding: 12px 16px;
   max-width: 75%;
-  color: #ccc;
+  color: var(--texto-suave);
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
 .msg-usuario {
   align-self: flex-end;
-  background: var(--ticket-accent);
+  background: var(--ingresso-destaque);
   border-radius: 12px 0 12px 12px;
   padding: 12px 16px;
   max-width: 75%;
-  color: #000;
+  color: #000000;
   font-size: 0.95rem;
   font-weight: 500;
   line-height: 1.5;
 }
 
-.chat-input-area {
+.area-entrada-batepapo {
   display: flex;
   gap: 10px;
 }
 
-.chat-input-area input {
+.area-entrada-batepapo input {
   flex: 1;
-  background: #1c1c24;
-  border: 1px solid #333;
+  background: var(--componente-fundo-medio);
+  border: 1px solid var(--borda-input);
   border-radius: 8px;
   padding: 12px 16px;
-  color: #fff;
+  color: var(--corpo-texto);
   font-size: 1rem;
   outline: none;
   transition: border-color 0.3s;
 }
 
-.chat-input-area input:focus {
-  border-color: var(--ticket-accent);
+.area-entrada-batepapo input:focus {
+  border-color: var(--ingresso-destaque);
 }
 
-.chat-input-area button {
+.area-entrada-batepapo button {
   padding: 12px 20px;
-  background: var(--ticket-accent);
-  color: #000;
+  background: var(--ingresso-destaque);
+  color: #000000;
   border: none;
   border-radius: 8px;
   font-weight: bold;
@@ -1087,31 +1137,30 @@ h2 {
   transition: opacity 0.3s;
 }
 
-.chat-input-area button:hover {
+.area-entrada-batepapo button:hover {
   opacity: 0.85;
 }
 
 .horarios {
-  background: #1c1c24;
+  background: var(--componente-fundo-medio);
   border-radius: 10px;
   padding: 20px;
   margin-top: 25px;
-  border-left: 3px solid var(--brand-yellow);
+  border-left: 3px solid var(--marca-amarelo);
 }
 
 .horarios h3 {
-  color: var(--brand-yellow);
+  color: var(--marca-amarelo);
   margin-bottom: 10px;
 }
 
 .horarios p {
-  color: #aaa;
+  color: var(--texto-opaco);
   font-size: 0.95rem;
   margin-bottom: 6px;
 }
 
-/* --- Compra de Ingressos --- */
-.form-compra {
+.formulario-compra {
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -1119,14 +1168,14 @@ h2 {
   margin: 35px 0;
 }
 
-.form-compra__input,
-.form-compra__select {
+.formulario-compra__input,
+.formulario-compra__select {
   width: 100%;
-  background-color: #1c1c24;
-  border: 1px solid #333344;
+  background-color: var(--componente-fundo-medio);
+  border: 1px solid var(--borda-input);
   border-radius: 8px;
   padding: 14px 16px;
-  color: #ffffff;
+  color: var(--corpo-texto);
   font-size: 1rem;
   outline: none;
   transition:
@@ -1134,13 +1183,13 @@ h2 {
     box-shadow 0.3s;
 }
 
-.form-compra__input:focus,
-.form-compra__select:focus {
-  border-color: var(--ticket-accent);
+.formulario-compra__input:focus,
+.formulario-compra__select:focus {
+  border-color: var(--ingresso-destaque);
   box-shadow: 0 0 8px rgba(0, 245, 212, 0.2);
 }
 
-.form-compra__select {
+.formulario-compra__select {
   cursor: pointer;
   appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'><path stroke='%238e8e9f' stroke-width='2' d='m1 1 4 4 4-4'/></svg>");
@@ -1148,8 +1197,8 @@ h2 {
   background-position: right 16px center;
 }
 
-.form-compra__btn {
-  background-color: var(--brand-yellow);
+.formulario-compra__btn {
+  background-color: var(--marca-amarelo);
   color: #000000;
   border: none;
   border-radius: 8px;
@@ -1164,21 +1213,21 @@ h2 {
     box-shadow 0.3s;
 }
 
-.form-compra__btn:hover {
-  background-color: var(--ticket-accent);
+.formulario-compra__btn:hover {
+  background-color: var(--ingresso-destaque);
   box-shadow: 0 0 15px rgba(0, 245, 212, 0.3);
 }
 
-.form-compra__btn:active {
+.formulario-compra__btn:active {
   transform: scale(0.98);
 }
 
-/* ==========================================================================
-   BOTÃO COMPRAR DIRECT LINK
-   ========================================================================== */
-.btn-comprar {
+/* ========================================================================== 
+    BOTÃO COMPRAR DIRECT LINK 
+    ========================================================================== */
+.botao-comprar {
   display: inline-block;
-  background-color: var(--brand-yellow);
+  background-color: var(--marca-amarelo);
   color: #000000;
   text-decoration: none;
   font-size: 1rem;
@@ -1186,8 +1235,8 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 12px 32px;
-  border-radius: 50px; /* Botão no estilo pílula */
-  border: 2px solid var(--brand-yellow);
+  border-radius: 50px;
+  border: 2px solid var(--marca-amarelo);
   cursor: pointer;
   text-align: center;
   transition:
@@ -1198,49 +1247,47 @@ h2 {
     transform 0.2s ease;
 }
 
-/* Efeito ao passar o mouse (Hover) */
-.btn-comprar:hover {
+.botao-comprar:hover {
   background-color: transparent;
-  border-color: var(--ticket-accent);
-  color: var(--ticket-accent); /* Texto muda para Ciano */
-  box-shadow: 0 0 20px rgba(0, 245, 212, 0.4); /* Brilho Neon */
+  border-color: var(--ingresso-destaque);
+  color: var(--ingresso-destaque);
+  box-shadow: 0 0 20px rgba(0, 245, 212, 0.4);
 }
 
-/* Efeito de clique (Active) */
-.btn-comprar:active {
+.botao-comprar:active {
   transform: scale(0.96);
 }
 
 .texto-seguranca {
   margin-top: 20px;
   font-size: 0.85rem;
-  color: #8e8e9f;
+  color: var(--texto-secundario);
   letter-spacing: 0.5px;
 }
 
-/* ==========================================================================
-   8. ELEMENTOS DE APOIO EXTRA
-   ========================================================================== */
+/* ========================================================================== 
+    8. ELEMENTOS DE APOIO EXTRA 
+    ========================================================================== */
 .frase-efeito {
   font-size: 1.3rem;
   font-style: italic;
-  color: var(--ticket-accent);
+  color: var(--ingresso-destaque);
   text-align: center;
   margin: 40px 0;
   letter-spacing: 1px;
 }
 
-.acoes-container {
+.recipiente-acoes {
   display: flex;
   justify-content: flex-start;
   margin-top: 20px;
-  border-top: 1px solid #232329;
+  border-top: 1px solid var(--borda-suave);
   padding-top: 20px;
 }
 
-.btn-voltar {
+.botao-voltar {
   display: inline-block;
-  color: var(--brand-yellow);
+  color: var(--marca-amarelo);
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
@@ -1249,102 +1296,99 @@ h2 {
     transform 0.3s;
 }
 
-.btn-voltar:hover {
-  color: var(--ticket-accent);
+.botao-voltar:hover {
+  color: var(--ingresso-destaque);
   transform: translateX(-5px);
 }
 
-/* ==========================================================================
-   9. FOOTER
-   ========================================================================== */
-.footer {
+/* ========================================================================== 
+    9. RODAPÉ (FOOTER) 
+    ========================================================================== */
+.rodape {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
-  background-color: #000;
-  color: white;
+  background-color: #000000;
+  color: var(--corpo-texto);
   padding: 50px 30px;
-  border-top: 3px solid #222;
+  border-top: 3px solid var(--input-fundo);
   margin-top: 60px;
 }
 
-.footer-col {
+.coluna-rodape {
   min-width: 250px;
   margin: 15px;
 }
 
-.footer-col h2 {
+.coluna-rodape h2 {
   text-align: left;
-  color: var(--brand-yellow);
+  color: var(--marca-amarelo);
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-.footer-col a,
-.footer-col p {
+.coluna-rodape a,
+.coluna-rodape p {
   display: block;
-  color: #ccc;
+  color: var(--texto-suave);
   text-decoration: none;
   margin-bottom: 12px;
   transition: color 0.3s ease;
 }
 
-.footer-col a:hover {
-  color: var(--ticket-accent);
+.coluna-rodape a:hover {
+  color: var(--ingresso-destaque);
 }
-.footer-col p:hover {
-  color: white;
+.coluna-rodape p:hover {
+  color: var(--corpo-texto);
 }
 
-.footer-copy {
+.direitos-rodape {
   width: 100%;
   text-align: center;
   margin-top: 30px;
   padding-top: 20px;
-  border-top: 1px solid #222;
-  color: #888;
+  border-top: 1px solid var(--input-fundo);
+  color: #888888;
   font-size: 14px;
 }
 
-/* Estilo para o link do autor no footer */
-.autor-link {
-  display: flex !important; /* Força o comportamento flex para alinhar o ícone */
-  align-items: center; /* Alinha verticalmente o ícone com o texto */
-  gap: 8px; /* Espaço sutil entre o ícone e o nome */
+.link-autor {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 12px;
-  color: #ccc;
+  color: var(--texto-suave);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-/* Estilo do ícone SVG do Github */
-.git-icon {
-  width: 16px; /* Tamanho perfeito para acompanhar o texto */
+.icone-git {
+  width: 16px;
   height: 16px;
-  fill: currentColor; /* Faz o ícone herdar a cor do texto automaticamente */
+  fill: currentColor;
   transition: fill 0.3s ease;
 }
 
-/* Efeito Hover unificado */
-.autor-link:hover {
-  color: var(--ticket-accent); /* Muda o texto e o ícone para Ciano no hover */
+.link-autor:hover {
+  color: var(--ingresso-destaque);
 }
 
-/* ==========================================================================
-   10. RESPONSIVIDADE (MEDIA QUERIES)
-   ========================================================================== */
+/* ========================================================================== 
+    10. RESPONSIVIDADE (MEDIA QUERIES) 
+    ========================================================================== */
 @media (max-width: 900px) {
   .multi-slide {
     grid-template-columns: repeat(2, 1fr);
   }
-  .multi-slide .show-card:last-child {
+  .multi-slide .cartao-show:last-child {
     display: none;
   }
 }
 
 @media (max-width: 700px) {
-  .menu-desktop {
+  .menu-computador {
     flex-direction: column;
     text-align: center;
   }
@@ -1352,62 +1396,62 @@ h2 {
     flex-direction: column;
     gap: 10px;
   }
-  .footer {
+  .rodape {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  .footer-col h2 {
+  .coluna-rodape h2 {
     text-align: center;
   }
 }
 
 @media (max-width: 650px) {
-  .ticket-container {
+  .recipiente-ingresso {
     flex-direction: column;
     height: auto;
     max-width: 400px;
   }
-  .ticket-body {
+  .corpo-ingresso {
     padding: 35px 20px;
   }
-  .carousel-slide {
+  .carrossel-deslizante {
     width: 90%;
     height: 180px;
   }
   .item h2 {
     font-size: 1.8rem;
   }
-  .ticket-perforation {
+  .perfuracao-ingresso {
     width: 100%;
     height: 2px;
     border-left: none;
-    border-top: 2px dashed var(--body-bg);
+    border-top: 2px dashed var(--corpo-fundo);
   }
-  .ticket-stub {
+  .canhoto-ingresso {
     width: 100%;
     height: 140px;
   }
-  .stub-content {
+  .conteudo-canhoto {
     flex-direction: row-reverse;
   }
-  .stub-call-to-action,
-  .barcode-number {
+  .chamada-para-acao,
+  .numero-codigo-barras {
     writing-mode: horizontal-tb;
     transform: none;
   }
-  .barcode {
+  .codigo-barras {
     flex-direction: row;
     width: 120px;
     height: 40px;
   }
-  .barcode-lines {
+  .linhas-codigo-barras {
     height: 24px;
     width: 100%;
     background: repeating-linear-gradient(
       0deg,
-      #fff,
-      #fff 2px,
+      var(--codigo-barras-cor),
+      var(--codigo-barras-cor) 2px,
       transparent 2px,
       transparent 5px
     );
@@ -1415,28 +1459,28 @@ h2 {
   .multi-slide {
     grid-template-columns: 1fr;
   }
-  .multi-carousel {
+  .multi-carrossel {
     height: 280px;
   }
-  #multiPrev {
+  #multiAnterior {
     left: 0px;
   }
-  #multiNext {
+  #multiProximo {
     right: 0px;
   }
-  .form-group-row {
+  .linha-grupo-formulario {
     flex-direction: column;
     gap: 15px;
   }
-  .form-ticket__btn {
+  .formulario-ingresso__btn {
     width: 100%;
     text-align: center;
   }
 }
 
 @media (max-width: 600px) {
-  .form-ouvidoria__btn,
-  .form-compra__btn {
+  .formulario-ouvidoria__btn,
+  .formulario-compra__btn {
     width: 100%;
     text-align: center;
   }
@@ -1449,7 +1493,7 @@ h2 {
   .titulo-pagina {
     font-size: 2rem;
   }
-  .time-container {
+  .recipiente-equipe {
     grid-template-columns: 1fr;
   }
 }
